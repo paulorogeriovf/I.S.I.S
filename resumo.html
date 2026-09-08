@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Visualização de resumo acadêmico do portfólio I.S.I.S."
+  >
+
+  <title>Resumo acadêmico | I.S.I.S.</title>
+
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="assets/favicon.svg"
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/resumo-detalhes.css">
+
+</head>
+
+<body class="summary-details-page">
+
+  <header class="header summary-details-header">
+
+    <a
+      class="logo"
+      href="./index.html"
+      aria-label="Voltar para o início"
+    >
+      <strong>I.S.I.S.</strong>
+      <span>Identidade · Saúde · Investigação · Saber</span>
+    </a>
+
+    <button
+      class="menu-button"
+      type="button"
+      aria-expanded="false"
+      aria-controls="navigation"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+
+      <b class="sr-only">Abrir menu</b>
+    </button>
+
+    <nav
+      id="navigation"
+      class="navigation"
+      aria-label="Navegação principal"
+    >
+      <a href="./index.html#sobre">Sobre</a>
+      <a href="./index.html#formacao">Formação</a>
+      <a href="./resumos.html">Resumos</a>
+      <a href="./index.html#certificados">Certificados</a>
+      <a href="./index.html#contato">Contato</a>
+
+      <a class="nav-login" href="./login.html">
+        Área administrativa
+      </a>
+    </nav>
+
+  </header>
+
+  <main>
+
+    <!-- Carregamento -->
+    <section
+      class="summary-feedback"
+      id="summary-loading"
+      hidden
+    >
+      <div class="feedback-symbol loading-symbol">I.</div>
+
+      <p class="eyebrow">
+        <span></span>
+        Biblioteca acadêmica
+      </p>
+
+      <h1>Carregando resumo...</h1>
+    </section>
+
+    <!-- Resumo não encontrado -->
+    <section
+      class="summary-feedback"
+      id="summary-not-found"
+    >
+      <div class="feedback-symbol">?</div>
+
+      <p class="eyebrow">
+        <span></span>
+        Conteúdo indisponível
+      </p>
+
+      <h1>Resumo não encontrado.</h1>
+
+      <p>
+        Este material ainda não foi publicado ou o endereço
+        utilizado não corresponde a um resumo disponível.
+      </p>
+
+      <a class="button button-primary" href="./resumos.html">
+        Voltar aos resumos
+      </a>
+    </section>
+
+    <!-- Conteúdo completo do resumo -->
+    <article
+      class="summary-content"
+      id="summary-content"
+      hidden
+    >
+
+      <header class="summary-cover">
+
+        <div class="summary-cover-decoration"></div>
+
+        <div class="summary-cover-content">
+
+          <a class="summary-back" href="./resumos.html">
+            <span>←</span>
+            Todos os resumos
+          </a>
+
+          <p class="eyebrow light-eyebrow">
+            <span></span>
+            Resumo acadêmico
+          </p>
+
+          <div class="summary-metadata">
+
+            <span id="summary-category"></span>
+            <span id="summary-semester"></span>
+            <span id="summary-date"></span>
+
+          </div>
+
+          <h1 id="summary-title"></h1>
+
+          <p
+            class="summary-description"
+            id="summary-description"
+          ></p>
+
+          <div
+            class="summary-keywords"
+            id="summary-keywords"
+            aria-label="Palavras-chave"
+          ></div>
+
+        </div>
+
+        <aside class="summary-information">
+
+          <span class="information-number">I.</span>
+
+          <div>
+            <small>DISCIPLINA</small>
+            <strong id="summary-discipline"></strong>
+          </div>
+
+          <div>
+            <small>PUBLICAÇÃO</small>
+            <strong id="summary-publication"></strong>
+          </div>
+
+        </aside>
+
+      </header>
+
+      <section class="summary-pages-section">
+
+        <div class="summary-pages-heading">
+
+          <div>
+
+            <p class="eyebrow">
+              <span></span>
+              Material completo
+            </p>
+
+            <h2>Páginas do resumo.</h2>
+
+          </div>
+
+          <a
+            class="button button-outline"
+            id="summary-pdf"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            hidden
+          >
+            Abrir PDF <span>↗</span>
+          </a>
+
+        </div>
+
+        <div
+          class="summary-pages"
+          id="summary-pages"
+        ></div>
+
+        <div
+          class="pages-empty"
+          id="pages-empty"
+          hidden
+        >
+          <p>
+            As páginas deste resumo ainda não estão disponíveis.
+          </p>
+        </div>
+
+      </section>
+
+    </article>
+
+  </main>
+
+  <footer class="footer">
+
+    <div class="footer-brand">
+      <strong>I.S.I.S.</strong>
+      <span>Identidade · Saúde · Investigação · Saber</span>
+    </div>
+
+    <p>
+      Portfólio acadêmico de Isis Raphaelli Antunes da Costa
+    </p>
+
+    <p>
+      © <span id="year"></span> · Todos os direitos reservados
+    </p>
+
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/resumo-detalhes.js"></script>
+
+</body>
+</html>

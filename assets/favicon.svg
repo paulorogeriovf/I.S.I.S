@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="I.S.I.S.">
+  <rect width="64" height="64" rx="16" fill="#12211c"></rect>
+
+  <circle cx="15" cy="15" r="3" fill="#d9aebe"></circle>
+  <circle cx="49" cy="15" r="3" fill="#d9aebe"></circle>
+  <circle cx="15" cy="49" r="3" fill="#d9aebe"></circle>
+  <circle cx="49" cy="49" r="3" fill="#d9aebe"></circle>
+
+  <text x="32" y="43" fill="#fffdf8" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" text-anchor="middle">
+    I
+  </text>
+</svg>

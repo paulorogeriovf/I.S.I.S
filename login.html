@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Área administrativa do portfólio I.S.I.S."
+  >
+
+  <title>Área administrativa | I.S.I.S.</title>
+
+  <link
+  rel="icon"
+  type="image/svg+xml"
+  href="assets/favicon.svg"
+>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body class="login-body">
+
+  <main class="login-page">
+
+    <section class="login-presentation">
+
+      <a
+  class="login-logo"
+  href="./index.html"
+  aria-label="Voltar para o portfólio"
+>
+  <strong>I.S.I.S.</strong>
+  <span>Identidade · Saúde · Investigação · Saber</span>
+</a>
+
+      <div class="login-message">
+
+        <p class="eyebrow light-eyebrow">
+          <span></span>
+          Área administrativa
+        </p>
+
+        <h1>Conteúdo em constante evolução.</h1>
+
+        <p>
+          Um espaço reservado para administrar o perfil,
+          os resumos acadêmicos e os certificados.
+        </p>
+
+      </div>
+
+      <a class="back-link" href="./index.html">
+  ← Voltar ao portfólio
+</a>
+
+      <div class="login-circle circle-one"></div>
+      <div class="login-circle circle-two"></div>
+
+    </section>
+
+    <section class="login-area">
+
+      <form class="login-card" id="login-form">
+
+        <div class="mobile-login-logo">
+          <strong>I.S.I.S.</strong>
+          <span>Área administrativa</span>
+        </div>
+
+        <p class="eyebrow">
+          <span></span>
+          Acesso restrito
+        </p>
+
+        <h2>Bem-vinda.</h2>
+
+        <p class="login-description">
+          Entre com sua conta administrativa para gerenciar
+          o portfólio.
+        </p>
+
+        <label for="email">E-mail</label>
+
+        <input
+          id="email"
+          name="email"
+          type="email"
+          autocomplete="email"
+          placeholder="seu@email.com"
+          disabled
+        >
+
+        <div class="password-label">
+
+          <label for="password">Senha</label>
+
+          <button type="button" disabled>
+            Esqueci minha senha
+          </button>
+
+        </div>
+
+        <input
+          id="password"
+          name="password"
+          type="password"
+          autocomplete="current-password"
+          placeholder="••••••••"
+          disabled
+        >
+
+        <button
+          class="button button-primary login-submit"
+          type="submit"
+          disabled
+        >
+          Entrar no painel <span>→</span>
+        </button>
+
+        <div class="prototype-alert">
+
+          <span>i</span>
+
+          <p>
+            <strong>Login ainda não ativado.</strong>
+            A autenticação será conectada ao Supabase
+            na próxima fase.
+          </p>
+
+        </div>
+
+      </form>
+
+    </section>
+
+  </main>
+
+  <script src="js/main.js"></script>
+
+</body>
+</html>
