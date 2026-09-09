@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="robots"
+    content="noindex, nofollow"
+  >
+
+  <title>Painel administrativo | I.S.I.S.</title>
+
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="../assets/favicon.svg"
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/admin.css">
+
+</head>
+
+<body class="admin-body admin-auth-pending">
+
+  <main class="admin-placeholder">
+
+    <div class="admin-placeholder-card">
+
+      <p class="eyebrow">
+        <span></span>
+        Área administrativa
+      </p>
+
+      <h1>
+        Painel I.S.I.S.
+      </h1>
+
+      <p>
+        A autenticação foi concluída. O dashboard e as ferramentas
+        de gerenciamento serão adicionados nas próximas etapas.
+      </p>
+
+      <div class="admin-user">
+
+        <span>Conta conectada</span>
+
+        <strong id="admin-name">
+          Administrador
+        </strong>
+
+        <small id="admin-email"></small>
+
+      </div>
+
+      <div class="admin-actions">
+
+        <a
+          class="button button-outline"
+          href="../index.html"
+        >
+          Ver portfólio
+        </a>
+
+        <button
+          class="button button-primary"
+          id="logout-button"
+          type="button"
+        >
+          Sair
+        </button>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/config/supabase.js"></script>
+  <script src="../js/admin/auth.js"></script>
+
+</body>
+</html>

@@ -17,10 +17,10 @@
   <title>Área administrativa | I.S.I.S.</title>
 
   <link
-  rel="icon"
-  type="image/svg+xml"
-  href="../assets/favicon.svg"
->
+    rel="icon"
+    type="image/svg+xml"
+    href="../assets/favicon.svg"
+  >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -46,13 +46,13 @@
     <section class="login-presentation">
 
       <a
-  class="login-logo"
-  href="../index.html"
-  aria-label="Voltar para o portfólio"
->
-  <strong>I.S.I.S.</strong>
-  <span>Identidade · Saúde · Investigação · Saber</span>
-</a>
+        class="login-logo"
+        href="../index.html"
+        aria-label="Voltar para o portfólio"
+      >
+        <strong>I.S.I.S.</strong>
+        <span>Identidade · Saúde · Investigação · Saber</span>
+      </a>
 
       <div class="login-message">
 
@@ -71,8 +71,8 @@
       </div>
 
       <a class="back-link" href="../index.html">
-  ← Voltar ao portfólio
-</a>
+        ← Voltar ao portfólio
+      </a>
 
       <div class="login-circle circle-one"></div>
       <div class="login-circle circle-two"></div>
@@ -84,13 +84,13 @@
       <form class="login-card" id="login-form">
 
         <a
-  class="mobile-login-logo"
-  href="../index.html"
-  aria-label="Voltar para o portfólio"
->
-  <strong>I.S.I.S.</strong>
-  <span>Área administrativa</span>
-</a>
+          class="mobile-login-logo"
+          href="../index.html"
+          aria-label="Voltar para o portfólio"
+        >
+          <strong>I.S.I.S.</strong>
+          <span>Área administrativa</span>
+        </a>
 
         <p class="eyebrow">
           <span></span>
@@ -104,7 +104,9 @@
           o portfólio.
         </p>
 
-        <label for="email">E-mail</label>
+        <label for="email">
+          E-mail
+        </label>
 
         <input
           id="email"
@@ -112,14 +114,19 @@
           type="email"
           autocomplete="email"
           placeholder="seu@email.com"
-          disabled
+          required
         >
 
         <div class="password-label">
 
-          <label for="password">Senha</label>
+          <label for="password">
+            Senha
+          </label>
 
-          <button type="button" disabled>
+          <button
+            id="forgot-password"
+            type="button"
+          >
             Esqueci minha senha
           </button>
 
@@ -131,27 +138,32 @@
           type="password"
           autocomplete="current-password"
           placeholder="••••••••"
-          disabled
+          minlength="6"
+          required
         >
 
         <button
           class="button button-primary login-submit"
+          id="login-submit"
           type="submit"
-          disabled
         >
-          Entrar no painel <span>→</span>
+          <span id="login-button-text">
+            Entrar no painel
+          </span>
+
+          <span aria-hidden="true">→</span>
         </button>
 
-        <div class="prototype-alert">
+        <div
+          class="prototype-alert"
+          id="login-message"
+          role="status"
+          aria-live="polite"
+          hidden
+        >
+          <span id="login-message-icon">i</span>
 
-          <span>i</span>
-
-          <p>
-            <strong>Login ainda não ativado.</strong>
-            A autenticação será conectada ao Supabase
-            na próxima fase.
-          </p>
-
+          <p id="login-message-text"></p>
         </div>
 
       </form>
@@ -160,7 +172,10 @@
 
   </main>
 
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/config/supabase.js"></script>
   <script src="../js/main.js"></script>
+  <script src="../js/admin/login.js"></script>
 
 </body>
 </html>

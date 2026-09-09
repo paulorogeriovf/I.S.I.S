@@ -1332,3 +1332,25 @@ input {
   }
 
 }
+
+/* Mensagens do formulário de login. */
+
+.prototype-alert[data-type="error"] {
+  color: #7a1f32;
+  background: #f7e7eb;
+  border-left-color: var(--wine);
+}
+
+.prototype-alert[data-type="error"] > span {
+  background: var(--wine);
+}
+
+.prototype-alert[data-type="success"] {
+  color: #214b3d;
+  background: #e3eee8;
+  border-left-color: #39735f;
+}
+
+.prototype-alert[data-type="success"] > span {
+  background: #39735f;
+}

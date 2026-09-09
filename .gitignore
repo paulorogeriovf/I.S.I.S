@@ -1,0 +1,26 @@
+# Variáveis privadas
+.env
+.env.local
+.env.*.local
+
+# Chaves e configurações secretas
+*.secret
+secrets.*
+
+# Arquivos temporários
+*.log
+*.tmp
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# macOS
+.DS_Store
+
+# Editores
+.vscode/
+.idea/
+
+# Dependências futuras
+node_modules/
