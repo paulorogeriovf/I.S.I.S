@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Certificados acadêmicos de Isis Raphaelli Antunes da Costa."
+  >
+
+  <title>Certificados | I.S.I.S.</title>
+
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="../assets/favicon.svg"
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/certificados.css">
+
+</head>
+
+<body class="certificates-page">
+
+  <header class="header certificates-header">
+
+    <a
+      class="logo"
+      href="../index.html"
+      aria-label="Voltar para o início"
+    >
+      <strong>I.S.I.S.</strong>
+      <span>Identidade · Saúde · Investigação · Saber</span>
+    </a>
+
+    <button
+      class="menu-button"
+      type="button"
+      aria-expanded="false"
+      aria-controls="navigation"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+
+      <b class="sr-only">
+        Abrir menu
+      </b>
+    </button>
+
+    <nav
+      id="navigation"
+      class="navigation"
+      aria-label="Navegação principal"
+    >
+      <a href="../index.html#sobre">
+        Sobre
+      </a>
+
+      <a href="../index.html#formacao">
+        Formação
+      </a>
+
+      <a href="./resumos.html">
+        Resumos
+      </a>
+
+      <a
+        class="active-navigation"
+        href="./certificados.html"
+        aria-current="page"
+      >
+        Certificados
+      </a>
+
+      <a href="../index.html#contato">
+        Contato
+      </a>
+
+      <a class="nav-login" href="./login.html">
+        Área administrativa
+      </a>
+    </nav>
+
+  </header>
+
+  <main>
+
+    <section class="certificates-hero">
+
+      <div
+        class="certificate-orbit orbit-large"
+        aria-hidden="true"
+      ></div>
+
+      <div
+        class="certificate-orbit orbit-small"
+        aria-hidden="true"
+      ></div>
+
+      <div class="certificates-hero-content reveal">
+
+        <a class="page-back-link" href="../index.html">
+          <span>←</span>
+          Voltar ao portfólio
+        </a>
+
+        <p class="eyebrow light-eyebrow">
+          <span></span>
+          Formação complementar
+        </p>
+
+        <h1>
+          Conhecimento que<br>
+          <em>deixa marcas.</em>
+        </h1>
+
+        <p>
+          Cursos, eventos e experiências acadêmicas que complementam
+          a graduação e representam novas etapas de aprendizado.
+        </p>
+
+      </div>
+
+      <div class="certificate-hero-mark reveal">
+
+        <span aria-hidden="true">✦</span>
+
+        <strong>I.</strong>
+
+        <small>CONQUISTAS</small>
+
+      </div>
+
+    </section>
+
+    <section class="certificates-library">
+
+      <div class="certificates-heading reveal">
+
+        <div>
+
+          <p class="eyebrow">
+            <span></span>
+            Acervo de certificados
+          </p>
+
+          <h2>Formação em movimento.</h2>
+
+        </div>
+
+        <p>
+          Utilize a pesquisa e os filtros para localizar certificados
+          por curso, instituição ou ano de conclusão.
+        </p>
+
+      </div>
+
+      <div
+        class="certificate-controls reveal"
+        aria-label="Pesquisa e filtros de certificados"
+      >
+
+        <div class="certificate-field certificate-search">
+
+          <label for="certificate-search">
+            Pesquisar
+          </label>
+
+          <div class="certificate-input-wrapper">
+
+            <span aria-hidden="true">⌕</span>
+
+            <input
+              id="certificate-search"
+              name="certificate-search"
+              type="search"
+              placeholder="Pesquisar pelo nome do curso..."
+            >
+
+          </div>
+
+        </div>
+
+        <div class="certificate-field">
+
+          <label for="institution-filter">
+            Instituição
+          </label>
+
+          <select
+            id="institution-filter"
+            name="institution-filter"
+          >
+            <option value="">
+              Todas as instituições
+            </option>
+          </select>
+
+        </div>
+
+        <div class="certificate-field">
+
+          <label for="year-filter">
+            Ano
+          </label>
+
+          <select
+            id="year-filter"
+            name="year-filter"
+          >
+            <option value="">
+              Todos os anos
+            </option>
+          </select>
+
+        </div>
+
+        <div class="certificate-field">
+
+          <label for="certificate-order">
+            Ordenar
+          </label>
+
+          <select
+            id="certificate-order"
+            name="certificate-order"
+          >
+            <option value="recent">
+              Mais recentes
+            </option>
+
+            <option value="oldest">
+              Mais antigos
+            </option>
+
+            <option value="alphabetical">
+              Ordem alfabética
+            </option>
+          </select>
+
+        </div>
+
+      </div>
+
+      <div class="certificate-results reveal">
+
+        <p id="certificate-counter">
+          Nenhum certificado publicado
+        </p>
+
+        <button
+          id="clear-certificate-filters"
+          type="button"
+        >
+          Limpar filtros
+        </button>
+
+      </div>
+
+      <!--
+        Os cards carregados do Supabase serão inseridos
+        automaticamente dentro deste elemento.
+      -->
+      <div
+        class="certificates-grid"
+        id="certificates-grid"
+        aria-live="polite"
+      ></div>
+
+      <!-- Estado exibido enquanto não existem certificados. -->
+      <div
+        class="certificates-empty reveal"
+        id="certificates-empty"
+      >
+
+        <div class="empty-certificate" aria-hidden="true">
+
+          <div class="empty-certificate-border">
+
+            <span class="empty-certificate-logo">
+              I.S.I.S.
+            </span>
+
+            <div class="empty-certificate-lines">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <div class="empty-certificate-footer">
+              <span></span>
+              <strong>✦</strong>
+              <span></span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="certificates-empty-message">
+
+          <span>ACERVO EM CONSTRUÇÃO</span>
+
+          <h2>
+            Novas conquistas serão registradas aqui.
+          </h2>
+
+          <p>
+            Os certificados aparecerão nesta página assim que forem
+            cadastrados, com instituição, carga horária, data de
+            conclusão e opções de visualização ou validação.
+          </p>
+
+          <a class="text-link" href="../index.html">
+            Voltar para a apresentação
+            <span>→</span>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="footer">
+
+    <div class="footer-brand">
+
+      <strong>I.S.I.S.</strong>
+
+      <span>
+        Identidade · Saúde · Investigação · Saber
+      </span>
+
+    </div>
+
+    <p>
+      Portfólio acadêmico de Isis Raphaelli Antunes da Costa
+    </p>
+
+    <p>
+      © <span id="year"></span> · Todos os direitos reservados
+    </p>
+
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/certificados.js"></script>
+
+</body>
+</html>
