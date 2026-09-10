@@ -17,3 +17,21 @@ add column if not exists curriculo_path text;
 create unique index if not exists
   perfil_apenas_um_registro
 on public.perfil ((true));
+
+-- =====================================================
+-- CAMINHOS DOS ARQUIVOS DOS RESUMOS
+-- =====================================================
+
+-- Caminho interno da capa no Storage.
+alter table public.resumos
+add column if not exists capa_path text;
+
+
+-- Caminho interno do PDF no Storage.
+alter table public.resumos
+add column if not exists pdf_path text;
+
+
+-- Caminho interno de cada imagem/página no Storage.
+alter table public.imagens_resumo
+add column if not exists imagem_path text;

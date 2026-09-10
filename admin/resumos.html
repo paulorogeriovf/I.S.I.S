@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="robots"
+    content="noindex, nofollow"
+  >
+
+  <title>Gerenciar resumos | I.S.I.S.</title>
+
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="../assets/favicon.svg"
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/admin.css">
+
+</head>
+
+<body class="admin-body admin-auth-pending">
+
+  <div class="admin-shell">
+
+    <aside
+      class="admin-sidebar"
+      id="admin-sidebar-mobile"
+    >
+
+      <a class="admin-brand" href="./index.html">
+        <strong>I.S.I.S.</strong>
+        <span>Painel administrativo</span>
+      </a>
+
+      <nav
+        class="admin-navigation"
+        aria-label="Navegação administrativa"
+      >
+
+        <a href="./index.html">
+          <span class="admin-nav-icon">⌂</span>
+          Dashboard
+        </a>
+
+        <a href="./perfil.html">
+          <span class="admin-nav-icon">◉</span>
+          Editar perfil
+        </a>
+
+        <a href="./conteudos.html">
+          <span class="admin-nav-icon">✦</span>
+          Perfil e trajetória
+        </a>
+
+        <a
+          class="active"
+          href="./resumos.html"
+          aria-current="page"
+        >
+          <span class="admin-nav-icon">□</span>
+          Resumos
+        </a>
+
+        <span class="admin-nav-disabled">
+          <span class="admin-nav-icon">◇</span>
+          Certificados
+        </span>
+
+        <span class="admin-nav-disabled">
+          <span class="admin-nav-icon">⚙</span>
+          Configurações
+        </span>
+
+      </nav>
+
+      <div class="admin-sidebar-footer">
+
+        <a href="../index.html">
+          Ver portfólio público
+          <span>↗</span>
+        </a>
+
+        <button
+          id="logout-button"
+          type="button"
+        >
+          Sair da conta
+        </button>
+
+      </div>
+
+    </aside>
+
+    <div class="admin-content">
+
+      <header class="admin-topbar">
+
+        <button
+          class="admin-menu-button"
+          id="admin-menu-button"
+          type="button"
+          aria-expanded="false"
+          aria-controls="admin-sidebar-mobile"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+
+          <b class="sr-only">
+            Abrir menu administrativo
+          </b>
+        </button>
+
+        <div class="admin-topbar-title">
+          <span>PORTFÓLIO ACADÊMICO</span>
+          <strong>Gerenciamento de resumos</strong>
+        </div>
+
+        <div class="admin-account">
+
+          <span
+            class="admin-avatar"
+            aria-hidden="true"
+          >
+            I
+          </span>
+
+          <div>
+            <strong id="admin-name">
+              Administrador
+            </strong>
+
+            <small id="admin-email"></small>
+          </div>
+
+        </div>
+
+      </header>
+
+      <main class="admin-main">
+
+        <section class="profile-heading">
+
+          <div>
+
+            <p class="eyebrow">
+              <span></span>
+              Biblioteca acadêmica
+            </p>
+
+            <h1>Gerenciar resumos.</h1>
+
+            <p>
+              Cadastre, edite, publique ou arquive os materiais
+              acadêmicos apresentados no portfólio.
+            </p>
+
+          </div>
+
+          <a
+            class="button button-primary"
+            href="./resumo-formulario.html"
+          >
+            Novo resumo <span>＋</span>
+          </a>
+
+        </section>
+
+        <div
+          class="profile-message"
+          id="summaries-message"
+          role="status"
+          aria-live="polite"
+          hidden
+        >
+          <span id="summaries-message-icon">i</span>
+          <p id="summaries-message-text"></p>
+        </div>
+
+        <section class="summary-admin-controls">
+
+          <div class="admin-field">
+
+            <label for="admin-summary-search">
+              Pesquisar
+            </label>
+
+            <input
+              id="admin-summary-search"
+              type="search"
+              placeholder="Título, disciplina ou categoria"
+            >
+
+          </div>
+
+          <div class="admin-field">
+
+            <label for="admin-summary-status">
+              Status
+            </label>
+
+            <select id="admin-summary-status">
+
+              <option value="">
+                Todos os status
+              </option>
+
+              <option value="publicado">
+                Publicados
+              </option>
+
+              <option value="rascunho">
+                Rascunhos
+              </option>
+
+              <option value="arquivado">
+                Arquivados
+              </option>
+
+            </select>
+
+          </div>
+
+        </section>
+
+        <section class="summary-admin-counter">
+
+          <p id="admin-summary-counter">
+            Carregando resumos...
+          </p>
+
+          <button
+            id="clear-admin-summary-filters"
+            type="button"
+          >
+            Limpar filtros
+          </button>
+
+        </section>
+
+        <div
+          class="profile-loading"
+          id="admin-summaries-loading"
+        >
+          Carregando resumos...
+        </div>
+
+        <section
+          class="admin-summaries-list"
+          id="admin-summaries-list"
+          aria-live="polite"
+          hidden
+        ></section>
+
+        <section
+          class="dashboard-empty admin-summaries-empty"
+          id="admin-summaries-empty"
+          hidden
+        >
+
+          <span>□</span>
+
+          <h2>Nenhum resumo cadastrado.</h2>
+
+          <p>
+            Crie o primeiro resumo para iniciar a biblioteca
+            acadêmica do portfólio.
+          </p>
+
+          <a
+            class="button button-primary"
+            href="./resumo-formulario.html"
+          >
+            Criar primeiro resumo
+          </a>
+
+        </section>
+
+        <section
+          class="dashboard-empty admin-summaries-empty"
+          id="admin-summaries-no-results"
+          hidden
+        >
+
+          <span>⌕</span>
+
+          <h2>Nenhum resultado encontrado.</h2>
+
+          <p>
+            Altere a pesquisa ou limpe os filtros selecionados.
+          </p>
+
+        </section>
+
+      </main>
+
+    </div>
+
+  </div>
+
+  <div
+    class="admin-sidebar-overlay"
+    id="admin-sidebar-overlay"
+  ></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/config/supabase.js"></script>
+  <script src="../js/admin/auth.js"></script>
+  <script src="../js/admin/resumos.js"></script>
+
+</body>
+</html>

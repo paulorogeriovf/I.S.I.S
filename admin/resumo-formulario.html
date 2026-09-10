@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="robots"
+    content="noindex, nofollow"
+  >
+
+  <title>Editar resumo | I.S.I.S.</title>
+
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="../assets/favicon.svg"
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/admin.css">
+
+</head>
+
+<body class="admin-body admin-auth-pending">
+
+  <div class="admin-shell">
+
+    <aside
+      class="admin-sidebar"
+      id="admin-sidebar-mobile"
+    >
+
+      <a class="admin-brand" href="./index.html">
+        <strong>I.S.I.S.</strong>
+        <span>Painel administrativo</span>
+      </a>
+
+      <nav
+        class="admin-navigation"
+        aria-label="Navegação administrativa"
+      >
+
+        <a href="./index.html">
+          <span class="admin-nav-icon">⌂</span>
+          Dashboard
+        </a>
+
+        <a href="./perfil.html">
+          <span class="admin-nav-icon">◉</span>
+          Editar perfil
+        </a>
+
+        <a href="./conteudos.html">
+          <span class="admin-nav-icon">✦</span>
+          Perfil e trajetória
+        </a>
+
+        <a
+          class="active"
+          href="./resumos.html"
+          aria-current="page"
+        >
+          <span class="admin-nav-icon">□</span>
+          Resumos
+        </a>
+
+        <span class="admin-nav-disabled">
+          <span class="admin-nav-icon">◇</span>
+          Certificados
+        </span>
+
+      </nav>
+
+      <div class="admin-sidebar-footer">
+
+        <a href="../index.html">
+          Ver portfólio público
+          <span>↗</span>
+        </a>
+
+        <button
+          id="logout-button"
+          type="button"
+        >
+          Sair da conta
+        </button>
+
+      </div>
+
+    </aside>
+
+    <div class="admin-content">
+
+      <header class="admin-topbar">
+
+        <button
+          class="admin-menu-button"
+          id="admin-menu-button"
+          type="button"
+          aria-expanded="false"
+          aria-controls="admin-sidebar-mobile"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+
+          <b class="sr-only">
+            Abrir menu administrativo
+          </b>
+        </button>
+
+        <div class="admin-topbar-title">
+          <span>PORTFÓLIO ACADÊMICO</span>
+          <strong id="summary-topbar-title">Novo resumo</strong>
+        </div>
+
+        <div class="admin-account">
+
+          <span class="admin-avatar" aria-hidden="true">
+            I
+          </span>
+
+          <div>
+            <strong id="admin-name">
+              Administrador
+            </strong>
+
+            <small id="admin-email"></small>
+          </div>
+
+        </div>
+
+      </header>
+
+      <main class="admin-main">
+
+        <section class="profile-heading">
+
+          <div>
+
+            <p class="eyebrow">
+              <span></span>
+              Biblioteca acadêmica
+            </p>
+
+            <h1 id="summary-form-heading">
+              Criar novo resumo.
+            </h1>
+
+            <p>
+              Preencha as informações do material e escolha
+              quando ele ficará disponível publicamente.
+            </p>
+
+          </div>
+
+          <a
+            class="button button-outline"
+            href="./resumos.html"
+          >
+            ← Voltar aos resumos
+          </a>
+
+        </section>
+
+        <div
+          class="profile-message"
+          id="summary-form-message"
+          role="status"
+          aria-live="polite"
+          hidden
+        >
+          <span id="summary-form-message-icon">i</span>
+          <p id="summary-form-message-text"></p>
+        </div>
+
+        <div
+          class="profile-loading"
+          id="summary-form-loading"
+          hidden
+        >
+          Carregando resumo...
+        </div>
+
+        <form
+          class="profile-form"
+          id="summary-form"
+        >
+
+          <section class="profile-form-section">
+
+            <div class="profile-section-heading">
+
+              <span>01</span>
+
+              <div>
+                <h2>Informações principais</h2>
+
+                <p>
+                  Identificação e apresentação do resumo.
+                </p>
+              </div>
+
+            </div>
+
+            <div class="profile-fields">
+
+              <div class="admin-field admin-field-full">
+
+                <label for="summary-title">
+                  Título
+                </label>
+
+                <input
+                  id="summary-title"
+                  type="text"
+                  maxlength="200"
+                  placeholder="Título do resumo acadêmico"
+                  required
+                >
+
+              </div>
+
+              <div class="admin-field">
+
+                <label for="summary-discipline">
+                  Disciplina
+                </label>
+
+                <input
+                  id="summary-discipline"
+                  type="text"
+                  maxlength="150"
+                  placeholder="Ex.: Genética"
+                >
+
+              </div>
+
+              <div class="admin-field">
+
+                <label for="summary-category">
+                  Categoria
+                </label>
+
+                <input
+                  id="summary-category"
+                  type="text"
+                  maxlength="150"
+                  placeholder="Ex.: Material de estudo"
+                >
+
+              </div>
+
+              <div class="admin-field">
+
+                <label for="summary-semester">
+                  Semestre
+                </label>
+
+                <input
+                  id="summary-semester"
+                  type="text"
+                  maxlength="50"
+                  placeholder="Ex.: 2º semestre"
+                >
+
+              </div>
+
+              <div class="admin-field">
+
+                <label for="summary-status">
+                  Status
+                </label>
+
+                <select id="summary-status">
+
+                  <option value="rascunho">
+                    Rascunho
+                  </option>
+
+                  <option value="publicado">
+                    Publicado
+                  </option>
+
+                  <option value="arquivado">
+                    Arquivado
+                  </option>
+
+                </select>
+
+              </div>
+
+              <div class="admin-field admin-field-full">
+
+                <label for="summary-description">
+                  Descrição
+                </label>
+
+                <textarea
+                  id="summary-description"
+                  rows="6"
+                  maxlength="2000"
+                  placeholder="Apresente brevemente o conteúdo do resumo."
+                ></textarea>
+
+              </div>
+
+              <div class="admin-field admin-field-full">
+
+                <label for="summary-keywords">
+                  Palavras-chave
+                </label>
+
+                <input
+                  id="summary-keywords"
+                  type="text"
+                  maxlength="500"
+                  placeholder="genes, DNA, hereditariedade"
+                >
+
+                <small>
+                  Separe as palavras-chave utilizando vírgulas.
+                </small>
+
+              </div>
+
+            </div>
+
+          </section>
+
+          <section class="profile-form-section">
+
+            <div class="profile-section-heading">
+
+              <span>02</span>
+
+              <div>
+                <h2>Arquivos</h2>
+
+                <p>
+                  Capa de apresentação e material completo em PDF.
+                </p>
+              </div>
+
+            </div>
+
+            <div class="profile-files">
+
+              <div class="profile-file-card">
+
+                <div
+                  class="summary-cover-preview"
+                  id="summary-cover-preview"
+                >
+                  <span id="summary-cover-placeholder">
+                    I.
+                  </span>
+
+                  <img
+                    id="summary-cover-image"
+                    src=""
+                    alt="Prévia da capa"
+                    hidden
+                  >
+                </div>
+
+                <div>
+
+                  <label for="summary-cover">
+                    Imagem de capa
+                  </label>
+
+                  <input
+                    id="summary-cover"
+                    type="file"
+                    accept="image/jpeg,image/png,image/webp"
+                  >
+
+                  <small>
+                    JPG, PNG ou WEBP com no máximo 5 MB.
+                  </small>
+
+                  <button
+                    class="profile-remove-file"
+                    id="remove-summary-cover"
+                    type="button"
+                    hidden
+                  >
+                    Remover capa
+                  </button>
+
+                </div>
+
+              </div>
+
+              <div class="profile-file-card">
+
+                <div class="profile-document-icon">
+                  PDF
+                </div>
+
+                <div>
+
+                  <label for="summary-pdf-file">
+                    Resumo em PDF
+                  </label>
+
+                  <input
+                    id="summary-pdf-file"
+                    type="file"
+                    accept="application/pdf"
+                  >
+
+                  <small>
+                    Arquivo PDF com no máximo 15 MB.
+                  </small>
+
+                  <a
+                    id="current-summary-pdf"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    hidden
+                  >
+                    Visualizar PDF atual ↗
+                  </a>
+
+                  <button
+                    class="profile-remove-file"
+                    id="remove-summary-pdf"
+                    type="button"
+                    hidden
+                  >
+                    Remover PDF
+                  </button>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </section>
+
+          <section class="summary-publication-note">
+
+            <span>i</span>
+
+            <div>
+
+              <strong>Sobre a publicação</strong>
+
+              <p>
+                Rascunhos e materiais arquivados não aparecem
+                no portfólio público. Somente resumos com o
+                status “Publicado” ficam visíveis.
+              </p>
+
+            </div>
+
+          </section>
+
+          <footer class="profile-form-footer">
+
+            <p>
+              Você poderá editar estas informações posteriormente.
+            </p>
+
+            <button
+              class="button button-primary"
+              id="save-summary"
+              type="submit"
+            >
+              <span id="save-summary-text">
+                Salvar resumo
+              </span>
+
+              <span aria-hidden="true">→</span>
+            </button>
+
+          </footer>
+
+        </form>
+
+      </main>
+
+    </div>
+
+  </div>
+
+  <div
+    class="admin-sidebar-overlay"
+    id="admin-sidebar-overlay"
+  ></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/config/supabase.js"></script>
+  <script src="../js/admin/auth.js"></script>
+  <script src="../js/admin/resumo-formulario.js"></script>
+
+</body>
+</html>
