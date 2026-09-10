@@ -988,3 +988,259 @@
   opacity: 0.55;
   cursor: wait;
 }
+
+/* ======================================================
+   ÁREAS DE INTERESSE E COMPETÊNCIAS
+====================================================== */
+
+.content-management-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 25px;
+}
+
+.management-panel {
+  min-width: 0;
+  padding: clamp(22px, 4vw, 35px);
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+
+.management-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--line);
+}
+
+.management-heading span {
+  color: var(--wine);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.management-heading h2 {
+  margin: 7px 0 0;
+  font: 600 1.55rem "Playfair Display", serif;
+}
+
+.management-heading > strong {
+  min-width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  color: white;
+  background: var(--wine);
+  border-radius: 50%;
+}
+
+.management-form {
+  display: grid;
+  gap: 18px;
+  padding: 25px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.management-form textarea {
+  width: 100%;
+  padding: 14px 15px;
+  color: var(--ink);
+  background: #f7f4ee;
+  border: 1px solid var(--line);
+  outline: none;
+  resize: vertical;
+  font: inherit;
+  line-height: 1.6;
+}
+
+.management-form textarea:focus {
+  border-color: var(--wine);
+  box-shadow: 0 0 0 3px rgba(124, 41, 71, 0.1);
+}
+
+.management-small-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.management-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.78rem;
+}
+
+.management-checkbox input {
+  width: 17px;
+  height: 17px;
+  accent-color: var(--wine);
+}
+
+.management-form-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.management-form-actions .button {
+  border: 0;
+  cursor: pointer;
+}
+
+.management-cancel {
+  padding: 11px 5px;
+  color: var(--wine);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.management-list {
+  display: grid;
+  gap: 12px;
+  padding-top: 25px;
+}
+
+.management-item {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: 14px;
+  padding: 18px;
+  background: #f7f4ee;
+  border: 1px solid var(--line);
+}
+
+.management-item-symbol {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  color: white;
+  background: var(--wine);
+  border-radius: 50%;
+  font-size: 1.1rem;
+}
+
+.management-item-content {
+  min-width: 0;
+}
+
+.management-item-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.management-item-top strong {
+  font-size: 0.88rem;
+}
+
+.management-item-content p {
+  margin: 8px 0;
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.55;
+}
+
+.management-item-content small {
+  color: var(--muted);
+  font-size: 0.66rem;
+}
+
+.management-status {
+  flex: 0 0 auto;
+  padding: 5px 8px;
+  border-radius: 100px;
+  font-size: 0.6rem;
+  font-weight: 700;
+}
+
+.management-status.active {
+  color: #39735f;
+  background: #e3eee8;
+}
+
+.management-status.inactive {
+  color: #7a1f32;
+  background: #f7e7eb;
+}
+
+.management-item-actions {
+  grid-column: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.management-item-actions button {
+  padding: 7px 10px;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--line);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.management-item-actions button:hover {
+  color: var(--wine);
+  border-color: var(--wine);
+}
+
+.management-item-actions button.danger {
+  color: #8f2949;
+}
+
+.management-item-actions button.danger:hover {
+  color: white;
+  background: #8f2949;
+  border-color: #8f2949;
+}
+
+.management-item-actions button:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+.management-empty {
+  padding: 35px 15px 10px;
+  color: var(--muted);
+  text-align: center;
+  font-size: 0.78rem;
+}
+
+@media (max-width: 1100px) {
+  .content-management-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .management-small-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .management-item {
+    grid-template-columns: 38px minmax(0, 1fr);
+    padding: 15px;
+  }
+
+  .management-item-symbol {
+    width: 38px;
+    height: 38px;
+  }
+}

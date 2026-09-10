@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="robots"
+    content="noindex, nofollow"
+  >
+
+  <title>Perfil e trajetória | I.S.I.S.</title>
+
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="../assets/favicon.svg"
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/admin.css">
+
+</head>
+
+<body class="admin-body admin-auth-pending">
+
+  <div class="admin-shell">
+
+    <aside class="admin-sidebar">
+
+      <a class="admin-brand" href="./index.html">
+        <strong>I.S.I.S.</strong>
+        <span>Painel administrativo</span>
+      </a>
+
+      <nav
+        class="admin-navigation"
+        aria-label="Navegação administrativa"
+      >
+        <a href="./index.html">
+          <span class="admin-nav-icon">⌂</span>
+          Dashboard
+        </a>
+
+        <a href="./perfil.html">
+          <span class="admin-nav-icon">◉</span>
+          Editar perfil
+        </a>
+
+        <a
+          class="active"
+          href="./conteudos.html"
+          aria-current="page"
+        >
+          <span class="admin-nav-icon">✦</span>
+          Perfil e trajetória
+        </a>
+
+        <span class="admin-nav-disabled">
+          <span class="admin-nav-icon">□</span>
+          Resumos
+        </span>
+
+        <span class="admin-nav-disabled">
+          <span class="admin-nav-icon">◇</span>
+          Certificados
+        </span>
+      </nav>
+
+      <div class="admin-sidebar-footer">
+
+        <a href="../index.html">
+          Ver portfólio público
+          <span>↗</span>
+        </a>
+
+        <button
+          id="logout-button"
+          type="button"
+        >
+          Sair da conta
+        </button>
+
+      </div>
+
+    </aside>
+
+    <div class="admin-content">
+
+      <header class="admin-topbar">
+
+        <button
+          class="admin-menu-button"
+          id="admin-menu-button"
+          type="button"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+
+          <b class="sr-only">
+            Abrir menu administrativo
+          </b>
+        </button>
+
+        <div class="admin-topbar-title">
+          <span>PORTFÓLIO ACADÊMICO</span>
+          <strong>Perfil e trajetória</strong>
+        </div>
+
+        <div class="admin-account">
+
+          <span class="admin-avatar" aria-hidden="true">
+            I
+          </span>
+
+          <div>
+            <strong id="admin-name">
+              Administrador
+            </strong>
+
+            <small id="admin-email"></small>
+          </div>
+
+        </div>
+
+      </header>
+
+      <main class="admin-main">
+
+        <section class="profile-heading">
+
+          <div>
+
+            <p class="eyebrow">
+              <span></span>
+              Desenvolvimento acadêmico
+            </p>
+
+            <h1>Interesses e competências.</h1>
+
+            <p>
+              Cadastre as áreas de interesse e os conhecimentos
+              que serão apresentados no portfólio.
+            </p>
+
+          </div>
+
+          <a
+            class="button button-outline"
+            href="../index.html#sobre"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Visualizar site <span>↗</span>
+          </a>
+
+        </section>
+
+        <div
+          class="profile-message"
+          id="content-message"
+          role="status"
+          aria-live="polite"
+          hidden
+        >
+          <span id="content-message-icon">i</span>
+          <p id="content-message-text"></p>
+        </div>
+
+        <div
+          class="profile-loading"
+          id="content-loading"
+        >
+          Carregando interesses e competências...
+        </div>
+
+        <div
+          class="content-management-grid"
+          id="content-management"
+          hidden
+        >
+
+          <!-- Áreas de interesse -->
+          <section class="management-panel">
+
+            <header class="management-heading">
+
+              <div>
+                <span>ÁREAS DE INTERESSE</span>
+                <h2>Campos para explorar</h2>
+              </div>
+
+              <strong id="interest-count">0</strong>
+
+            </header>
+
+            <form
+              class="management-form"
+              id="interest-form"
+            >
+
+              <input
+                id="interest-id"
+                type="hidden"
+              >
+
+              <div class="admin-field">
+
+                <label for="interest-title">
+                  Título
+                </label>
+
+                <input
+                  id="interest-title"
+                  type="text"
+                  maxlength="150"
+                  placeholder="Ex.: Pesquisa científica"
+                  required
+                >
+
+              </div>
+
+              <div class="management-small-fields">
+
+                <div class="admin-field">
+
+                  <label for="interest-icon">
+                    Símbolo
+                  </label>
+
+                  <input
+                    id="interest-icon"
+                    type="text"
+                    maxlength="10"
+                    placeholder="✦"
+                  >
+
+                </div>
+
+                <div class="admin-field">
+
+                  <label for="interest-order">
+                    Ordem
+                  </label>
+
+                  <input
+                    id="interest-order"
+                    type="number"
+                    min="0"
+                    max="999"
+                    value="0"
+                  >
+
+                </div>
+
+              </div>
+
+              <div class="admin-field">
+
+                <label for="interest-description">
+                  Descrição
+                </label>
+
+                <textarea
+                  id="interest-description"
+                  rows="4"
+                  maxlength="1000"
+                  placeholder="Explique brevemente essa área."
+                ></textarea>
+
+              </div>
+
+              <label class="management-checkbox">
+
+                <input
+                  id="interest-active"
+                  type="checkbox"
+                  checked
+                >
+
+                <span>
+                  Exibir esta área no portfólio
+                </span>
+
+              </label>
+
+              <div class="management-form-actions">
+
+                <button
+                  class="button button-primary"
+                  id="save-interest"
+                  type="submit"
+                >
+                  Salvar área
+                </button>
+
+                <button
+                  class="management-cancel"
+                  id="cancel-interest"
+                  type="button"
+                  hidden
+                >
+                  Cancelar edição
+                </button>
+
+              </div>
+
+            </form>
+
+            <div
+              class="management-list"
+              id="interest-list"
+            ></div>
+
+            <div
+              class="management-empty"
+              id="interest-empty"
+            >
+              Nenhuma área de interesse cadastrada.
+            </div>
+
+          </section>
+
+          <!-- Competências -->
+          <section class="management-panel">
+
+            <header class="management-heading">
+
+              <div>
+                <span>COMPETÊNCIAS</span>
+                <h2>Conhecimentos desenvolvidos</h2>
+              </div>
+
+              <strong id="skill-count">0</strong>
+
+            </header>
+
+            <form
+              class="management-form"
+              id="skill-form"
+            >
+
+              <input
+                id="skill-id"
+                type="hidden"
+              >
+
+              <div class="admin-field">
+
+                <label for="skill-name">
+                  Nome
+                </label>
+
+                <input
+                  id="skill-name"
+                  type="text"
+                  maxlength="150"
+                  placeholder="Ex.: Metodologia científica"
+                  required
+                >
+
+              </div>
+
+              <div class="admin-field">
+
+                <label for="skill-order">
+                  Ordem
+                </label>
+
+                <input
+                  id="skill-order"
+                  type="number"
+                  min="0"
+                  max="999"
+                  value="0"
+                >
+
+              </div>
+
+              <div class="admin-field">
+
+                <label for="skill-description">
+                  Descrição
+                </label>
+
+                <textarea
+                  id="skill-description"
+                  rows="4"
+                  maxlength="1000"
+                  placeholder="Descreva brevemente essa competência."
+                ></textarea>
+
+              </div>
+
+              <label class="management-checkbox">
+
+                <input
+                  id="skill-active"
+                  type="checkbox"
+                  checked
+                >
+
+                <span>
+                  Exibir esta competência no portfólio
+                </span>
+
+              </label>
+
+              <div class="management-form-actions">
+
+                <button
+                  class="button button-primary"
+                  id="save-skill"
+                  type="submit"
+                >
+                  Salvar competência
+                </button>
+
+                <button
+                  class="management-cancel"
+                  id="cancel-skill"
+                  type="button"
+                  hidden
+                >
+                  Cancelar edição
+                </button>
+
+              </div>
+
+            </form>
+
+            <div
+              class="management-list"
+              id="skill-list"
+            ></div>
+
+            <div
+              class="management-empty"
+              id="skill-empty"
+            >
+              Nenhuma competência cadastrada.
+            </div>
+
+          </section>
+
+        </div>
+
+      </main>
+
+    </div>
+
+  </div>
+
+  <div
+    class="admin-sidebar-overlay"
+    id="admin-sidebar-overlay"
+  ></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/config/supabase.js"></script>
+  <script src="../js/admin/auth.js"></script>
+  <script src="../js/admin/conteudos.js"></script>
+
+</body>
+</html>

@@ -44,9 +44,16 @@
 
   <div class="admin-shell">
 
-    <aside class="admin-sidebar">
+    <!-- Menu lateral -->
+    <aside
+      class="admin-sidebar"
+      id="admin-sidebar-mobile"
+    >
 
-      <a class="admin-brand" href="./index.html">
+      <a
+        class="admin-brand"
+        href="./index.html"
+      >
         <strong>I.S.I.S.</strong>
         <span>Painel administrativo</span>
       </a>
@@ -55,6 +62,7 @@
         class="admin-navigation"
         aria-label="Navegação administrativa"
       >
+
         <a
           class="active"
           href="./index.html"
@@ -65,9 +73,14 @@
         </a>
 
         <a href="./perfil.html">
-  <span class="admin-nav-icon">◉</span>
-  Editar perfil
-</a>
+          <span class="admin-nav-icon">◉</span>
+          Editar perfil
+        </a>
+
+        <a href="./conteudos.html">
+          <span class="admin-nav-icon">✦</span>
+          Perfil e trajetória
+        </a>
 
         <span class="admin-nav-disabled">
           <span class="admin-nav-icon">□</span>
@@ -83,6 +96,7 @@
           <span class="admin-nav-icon">⚙</span>
           Configurações
         </span>
+
       </nav>
 
       <div class="admin-sidebar-footer">
@@ -103,6 +117,7 @@
 
     </aside>
 
+    <!-- Conteúdo administrativo -->
     <div class="admin-content">
 
       <header class="admin-topbar">
@@ -118,7 +133,9 @@
           <span></span>
           <span></span>
 
-          <b class="sr-only">Abrir menu administrativo</b>
+          <b class="sr-only">
+            Abrir menu administrativo
+          </b>
         </button>
 
         <div class="admin-topbar-title">
@@ -128,16 +145,21 @@
 
         <div class="admin-account">
 
-          <span class="admin-avatar" aria-hidden="true">
+          <span
+            class="admin-avatar"
+            aria-hidden="true"
+          >
             I
           </span>
 
           <div>
+
             <strong id="admin-name">
               Administrador
             </strong>
 
             <small id="admin-email"></small>
+
           </div>
 
         </div>
@@ -146,6 +168,7 @@
 
       <main class="admin-main">
 
+        <!-- Apresentação -->
         <section class="admin-welcome">
 
           <div>
@@ -177,20 +200,24 @@
 
         </section>
 
+        <!-- Mensagem de erro -->
         <section
           class="admin-alert"
           id="dashboard-error"
           role="alert"
           hidden
         >
+
           <span>!</span>
 
           <p>
             Não foi possível carregar os dados do dashboard.
             Atualize a página e tente novamente.
           </p>
+
         </section>
 
+        <!-- Contadores -->
         <section
           class="dashboard-cards"
           aria-label="Resumo dos conteúdos"
@@ -241,7 +268,9 @@
 
           </article>
 
-          <article class="dashboard-card dashboard-card-featured">
+          <article
+            class="dashboard-card dashboard-card-featured"
+          >
 
             <div class="dashboard-card-top">
               <span>TOTAL DE CONTEÚDOS</span>
@@ -258,8 +287,10 @@
 
         </section>
 
+        <!-- Área inferior -->
         <section class="dashboard-layout">
 
+          <!-- Publicações recentes -->
           <article class="dashboard-panel">
 
             <div class="dashboard-panel-heading">
@@ -293,19 +324,26 @@
               id="recent-empty"
               hidden
             >
+
               <span>□</span>
 
-              <h3>Nenhuma publicação cadastrada.</h3>
+              <h3>
+                Nenhuma publicação cadastrada.
+              </h3>
 
               <p>
-                Os resumos e certificados cadastrados aparecerão
-                aqui.
+                Os resumos e certificados cadastrados
+                aparecerão aqui.
               </p>
+
             </div>
 
           </article>
 
-          <aside class="dashboard-panel dashboard-actions-panel">
+          <!-- Atalhos -->
+          <aside
+            class="dashboard-panel dashboard-actions-panel"
+          >
 
             <div class="dashboard-panel-heading">
 
@@ -318,32 +356,73 @@
 
             <div class="dashboard-actions">
 
-              <button type="button" disabled>
+              <button
+                type="button"
+                disabled
+              >
+
                 <span>＋</span>
 
                 <div>
                   <strong>Novo resumo</strong>
-                  <small>Disponível na próxima etapa</small>
+
+                  <small>
+                    Disponível na próxima etapa
+                  </small>
                 </div>
+
               </button>
 
-              <button type="button" disabled>
+              <button
+                type="button"
+                disabled
+              >
+
                 <span>＋</span>
 
                 <div>
                   <strong>Novo certificado</strong>
-                  <small>Disponível em breve</small>
+
+                  <small>
+                    Disponível em breve
+                  </small>
                 </div>
+
               </button>
 
-              <a class="admin-menu-link" href="./perfil.html">
-  <span>✎</span>
+              <a
+                class="admin-menu-link"
+                href="./perfil.html"
+              >
 
-  <div>
-    <strong>Editar perfil</strong>
-    <small>Atualizar informações do portfólio</small>
-  </div>
-</a>
+                <span>✎</span>
+
+                <div>
+                  <strong>Editar perfil</strong>
+
+                  <small>
+                    Atualizar informações do portfólio
+                  </small>
+                </div>
+
+              </a>
+
+              <a
+                class="admin-menu-link"
+                href="./conteudos.html"
+              >
+
+                <span>✦</span>
+
+                <div>
+                  <strong>Perfil e trajetória</strong>
+
+                  <small>
+                    Interesses e competências
+                  </small>
+                </div>
+
+              </a>
 
             </div>
 
@@ -357,14 +436,21 @@
 
   </div>
 
+  <!-- Fundo do menu no celular -->
   <div
     class="admin-sidebar-overlay"
     id="admin-sidebar-overlay"
   ></div>
 
+  <!-- Supabase -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
   <script src="../js/config/supabase.js"></script>
+
+  <!-- Segurança administrativa -->
   <script src="../js/admin/auth.js"></script>
+
+  <!-- Dashboard -->
   <script src="../js/admin/dashboard.js"></script>
 
 </body>

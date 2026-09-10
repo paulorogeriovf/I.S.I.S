@@ -395,92 +395,101 @@
     </section>
 
     <!-- Áreas de interesse -->
-    <section class="section interests">
+    <!-- Áreas de interesse -->
+<section
+  class="section interests"
+  id="interesses"
+>
 
-      <div class="section-heading reveal">
+  <div class="section-heading reveal">
 
-        <div>
+    <div>
 
-          <p class="eyebrow">
-            <span></span>
-            Desenvolvimento
-          </p>
+      <p class="eyebrow">
+        <span></span>
+        Desenvolvimento
+      </p>
 
-          <h2>
-            Áreas para explorar.
-          </h2>
+      <h2>Áreas para explorar.</h2>
 
-        </div>
+    </div>
 
-        <p>
-          Os interesses específicos poderão ser adicionados
-          pela Isis conforme sua trajetória acadêmica evoluir.
-        </p>
+    <p>
+      Campos de interesse que acompanham o desenvolvimento
+      acadêmico e profissional ao longo da graduação.
+    </p>
 
-      </div>
+  </div>
 
-      <div class="interest-grid reveal">
+  <div
+    class="interest-grid reveal"
+    id="public-interest-grid"
+    aria-live="polite"
+    hidden
+  ></div>
 
-        <article>
+  <div
+    class="trajectory-empty reveal"
+    id="public-interest-empty"
+    hidden
+  >
+    <span>✦</span>
 
-          <span>01</span>
+    <p>
+      As áreas de interesse serão adicionadas conforme
+      a trajetória acadêmica evoluir.
+    </p>
+  </div>
 
-          <div class="interest-symbol">
-            ⌁
-          </div>
+</section>
 
-          <h3>
-            Pesquisa científica
-          </h3>
+<!-- Competências -->
+<section
+  class="section public-skills"
+  id="competencias"
+>
 
-          <p>
-            Espaço para registrar interesses, projetos e
-            experiências relacionados à pesquisa.
-          </p>
+  <div class="section-heading reveal">
 
-        </article>
+    <div>
 
-        <article>
+      <p class="eyebrow light-eyebrow">
+        <span></span>
+        Conhecimentos
+      </p>
 
-          <span>02</span>
+      <h2>Competências em desenvolvimento.</h2>
 
-          <div class="interest-symbol">
-            ◇
-          </div>
+    </div>
 
-          <h3>
-            Prática biomédica
-          </h3>
+    <p>
+      Conhecimentos acadêmicos e profissionais desenvolvidos
+      ao longo da formação em Biomedicina.
+    </p>
 
-          <p>
-            Área destinada às especialidades e aos campos
-            profissionais de maior interesse.
-          </p>
+  </div>
 
-        </article>
+  <div
+    class="public-skills-grid reveal"
+    id="public-skills-grid"
+    aria-live="polite"
+    hidden
+  ></div>
 
-        <article>
+  <div
+    class="trajectory-empty trajectory-empty-light reveal"
+    id="public-skills-empty"
+    hidden
+  >
+    <span>◇</span>
 
-          <span>03</span>
+    <p>
+      As competências serão adicionadas conforme novos
+      conhecimentos forem desenvolvidos.
+    </p>
+  </div>
 
-          <div class="interest-symbol">
-            ✦
-          </div>
-
-          <h3>
-            Aprendizado contínuo
-          </h3>
-
-          <p>
-            Cursos, eventos e conhecimentos que complementam
-            a formação acadêmica.
-          </p>
-
-        </article>
-
-      </div>
-
-    </section>
+</section>
 
     <!-- Resumos -->
     <section
@@ -706,6 +715,8 @@
 
   <!-- Carregamento do perfil público -->
   <script src="js/perfil-publico.js"></script>
+
+  <script src="js/trajetoria-publica.js"></script>
 
 </body>
 </html>

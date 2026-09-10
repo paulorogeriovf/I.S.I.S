@@ -1354,3 +1354,116 @@ input {
 .prototype-alert[data-type="success"] > span {
   background: #39735f;
 }
+
+/* ======================================================
+   TRAJETÓRIA PÚBLICA
+====================================================== */
+
+.trajectory-empty {
+  min-height: 180px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 15px;
+  padding: 35px;
+  color: var(--muted);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  text-align: center;
+}
+
+.trajectory-empty > span {
+  color: var(--wine);
+  font-size: 2rem;
+}
+
+.trajectory-empty p {
+  max-width: 520px;
+  margin: 0;
+  line-height: 1.65;
+}
+
+
+/* COMPETÊNCIAS */
+
+.public-skills {
+  color: white;
+  background: var(--ink);
+}
+
+.public-skills .section-heading > p {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.public-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.public-skill-card {
+  min-height: 170px;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 20px;
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.public-skill-card:hover {
+  background: rgba(255, 255, 255, 0.09);
+  transform: translateY(-4px);
+}
+
+.public-skill-number {
+  color: var(--rose);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.public-skill-card h3 {
+  margin: 0 0 12px;
+  font: 600 1.5rem "Playfair Display", serif;
+}
+
+.public-skill-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.63);
+  font-size: 0.85rem;
+  line-height: 1.65;
+}
+
+.public-skill-card > strong {
+  color: var(--rose);
+  font-size: 1.4rem;
+}
+
+.trajectory-empty-light {
+  color: rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.trajectory-empty-light > span {
+  color: var(--rose);
+}
+
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 780px) {
+  .public-skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .public-skill-card {
+    min-height: auto;
+    padding: 23px;
+  }
+}
