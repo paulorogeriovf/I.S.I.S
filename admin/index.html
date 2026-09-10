@@ -42,62 +42,330 @@
 
 <body class="admin-body admin-auth-pending">
 
-  <main class="admin-placeholder">
+  <div class="admin-shell">
 
-    <div class="admin-placeholder-card">
+    <aside class="admin-sidebar">
 
-      <p class="eyebrow">
-        <span></span>
-        Área administrativa
-      </p>
+      <a class="admin-brand" href="./index.html">
+        <strong>I.S.I.S.</strong>
+        <span>Painel administrativo</span>
+      </a>
 
-      <h1>
-        Painel I.S.I.S.
-      </h1>
-
-      <p>
-        A autenticação foi concluída. O dashboard e as ferramentas
-        de gerenciamento serão adicionados nas próximas etapas.
-      </p>
-
-      <div class="admin-user">
-
-        <span>Conta conectada</span>
-
-        <strong id="admin-name">
-          Administrador
-        </strong>
-
-        <small id="admin-email"></small>
-
-      </div>
-
-      <div class="admin-actions">
-
+      <nav
+        class="admin-navigation"
+        aria-label="Navegação administrativa"
+      >
         <a
-          class="button button-outline"
-          href="../index.html"
+          class="active"
+          href="./index.html"
+          aria-current="page"
         >
-          Ver portfólio
+          <span class="admin-nav-icon">⌂</span>
+          Dashboard
+        </a>
+
+        <a href="./perfil.html">
+  <span class="admin-nav-icon">◉</span>
+  Editar perfil
+</a>
+
+        <span class="admin-nav-disabled">
+          <span class="admin-nav-icon">□</span>
+          Resumos
+        </span>
+
+        <span class="admin-nav-disabled">
+          <span class="admin-nav-icon">◇</span>
+          Certificados
+        </span>
+
+        <span class="admin-nav-disabled">
+          <span class="admin-nav-icon">⚙</span>
+          Configurações
+        </span>
+      </nav>
+
+      <div class="admin-sidebar-footer">
+
+        <a href="../index.html">
+          Ver portfólio público
+          <span>↗</span>
         </a>
 
         <button
-          class="button button-primary"
           id="logout-button"
           type="button"
         >
-          Sair
+          Sair da conta
         </button>
 
       </div>
 
+    </aside>
+
+    <div class="admin-content">
+
+      <header class="admin-topbar">
+
+        <button
+          class="admin-menu-button"
+          id="admin-menu-button"
+          type="button"
+          aria-expanded="false"
+          aria-controls="admin-sidebar-mobile"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+
+          <b class="sr-only">Abrir menu administrativo</b>
+        </button>
+
+        <div class="admin-topbar-title">
+          <span>PORTFÓLIO ACADÊMICO</span>
+          <strong>Área administrativa</strong>
+        </div>
+
+        <div class="admin-account">
+
+          <span class="admin-avatar" aria-hidden="true">
+            I
+          </span>
+
+          <div>
+            <strong id="admin-name">
+              Administrador
+            </strong>
+
+            <small id="admin-email"></small>
+          </div>
+
+        </div>
+
+      </header>
+
+      <main class="admin-main">
+
+        <section class="admin-welcome">
+
+          <div>
+
+            <p class="eyebrow">
+              <span></span>
+              Visão geral
+            </p>
+
+            <h1>
+              Bem-vindo ao painel.
+            </h1>
+
+            <p>
+              Acompanhe os conteúdos publicados e administre
+              o portfólio acadêmico I.S.I.S.
+            </p>
+
+          </div>
+
+          <a
+            class="button button-outline"
+            href="../index.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Visualizar site <span>↗</span>
+          </a>
+
+        </section>
+
+        <section
+          class="admin-alert"
+          id="dashboard-error"
+          role="alert"
+          hidden
+        >
+          <span>!</span>
+
+          <p>
+            Não foi possível carregar os dados do dashboard.
+            Atualize a página e tente novamente.
+          </p>
+        </section>
+
+        <section
+          class="dashboard-cards"
+          aria-label="Resumo dos conteúdos"
+        >
+
+          <article class="dashboard-card">
+
+            <div class="dashboard-card-top">
+              <span>RESUMOS PUBLICADOS</span>
+              <i>□</i>
+            </div>
+
+            <strong id="published-summaries">
+              —
+            </strong>
+
+            <p>Visíveis no portfólio</p>
+
+          </article>
+
+          <article class="dashboard-card">
+
+            <div class="dashboard-card-top">
+              <span>RASCUNHOS</span>
+              <i>✎</i>
+            </div>
+
+            <strong id="draft-summaries">
+              —
+            </strong>
+
+            <p>Aguardando publicação</p>
+
+          </article>
+
+          <article class="dashboard-card">
+
+            <div class="dashboard-card-top">
+              <span>CERTIFICADOS</span>
+              <i>◇</i>
+            </div>
+
+            <strong id="published-certificates">
+              —
+            </strong>
+
+            <p>Certificados publicados</p>
+
+          </article>
+
+          <article class="dashboard-card dashboard-card-featured">
+
+            <div class="dashboard-card-top">
+              <span>TOTAL DE CONTEÚDOS</span>
+              <i>✦</i>
+            </div>
+
+            <strong id="total-content">
+              —
+            </strong>
+
+            <p>Resumos e certificados</p>
+
+          </article>
+
+        </section>
+
+        <section class="dashboard-layout">
+
+          <article class="dashboard-panel">
+
+            <div class="dashboard-panel-heading">
+
+              <div>
+                <span>CONTEÚDO</span>
+                <h2>Publicações recentes</h2>
+              </div>
+
+              <span class="dashboard-status">
+                Atualizado
+              </span>
+
+            </div>
+
+            <div
+              class="dashboard-loading"
+              id="recent-loading"
+            >
+              Carregando publicações...
+            </div>
+
+            <div
+              class="recent-publications"
+              id="recent-publications"
+              hidden
+            ></div>
+
+            <div
+              class="dashboard-empty"
+              id="recent-empty"
+              hidden
+            >
+              <span>□</span>
+
+              <h3>Nenhuma publicação cadastrada.</h3>
+
+              <p>
+                Os resumos e certificados cadastrados aparecerão
+                aqui.
+              </p>
+            </div>
+
+          </article>
+
+          <aside class="dashboard-panel dashboard-actions-panel">
+
+            <div class="dashboard-panel-heading">
+
+              <div>
+                <span>ATALHOS</span>
+                <h2>Gerenciar conteúdo</h2>
+              </div>
+
+            </div>
+
+            <div class="dashboard-actions">
+
+              <button type="button" disabled>
+                <span>＋</span>
+
+                <div>
+                  <strong>Novo resumo</strong>
+                  <small>Disponível na próxima etapa</small>
+                </div>
+              </button>
+
+              <button type="button" disabled>
+                <span>＋</span>
+
+                <div>
+                  <strong>Novo certificado</strong>
+                  <small>Disponível em breve</small>
+                </div>
+              </button>
+
+              <a class="admin-menu-link" href="./perfil.html">
+  <span>✎</span>
+
+  <div>
+    <strong>Editar perfil</strong>
+    <small>Atualizar informações do portfólio</small>
+  </div>
+</a>
+
+            </div>
+
+          </aside>
+
+        </section>
+
+      </main>
+
     </div>
 
-  </main>
+  </div>
+
+  <div
+    class="admin-sidebar-overlay"
+    id="admin-sidebar-overlay"
+  ></div>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="../js/config/supabase.js"></script>
   <script src="../js/admin/auth.js"></script>
+  <script src="../js/admin/dashboard.js"></script>
 
 </body>
 </html>

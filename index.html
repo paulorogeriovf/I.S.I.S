@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+
   <meta charset="UTF-8">
 
   <meta
@@ -16,10 +17,10 @@
   <title>I.S.I.S. | Portfólio Acadêmico</title>
 
   <link
-  rel="icon"
-  type="image/svg+xml"
-  href="assets/favicon.svg"
->
+    rel="icon"
+    type="image/svg+xml"
+    href="assets/favicon.svg"
+  >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -35,13 +36,18 @@
   >
 
   <link rel="stylesheet" href="css/styles.css">
+
 </head>
 
 <body>
 
   <header class="header">
 
-    <a class="logo" href="#inicio" aria-label="Voltar ao início">
+    <a
+      class="logo"
+      href="#inicio"
+      aria-label="Voltar ao início"
+    >
       <strong>I.S.I.S.</strong>
       <span>Identidade · Saúde · Investigação · Saber</span>
     </a>
@@ -55,7 +61,10 @@
       <span></span>
       <span></span>
       <span></span>
-      <b class="sr-only">Abrir menu</b>
+
+      <b class="sr-only">
+        Abrir menu
+      </b>
     </button>
 
     <nav
@@ -69,7 +78,10 @@
       <a href="#certificados">Certificados</a>
       <a href="#contato">Contato</a>
 
-      <a class="nav-login" href="pages/login.html">
+      <a
+        class="nav-login"
+        href="pages/login.html"
+      >
         Área administrativa
       </a>
     </nav>
@@ -78,6 +90,7 @@
 
   <main>
 
+    <!-- Apresentação principal -->
     <section class="hero" id="inicio">
 
       <div class="hero-decoration decoration-one"></div>
@@ -95,23 +108,36 @@
           <em>propósito.</em>
         </h1>
 
-        <p class="hero-name">
+        <p
+          class="hero-name"
+          id="public-profile-name"
+        >
           Isis Raphaelli Antunes da Costa
         </p>
 
-        <p class="hero-description">
-          Graduanda em Biomedicina pela PUC-Campinas, construindo
-          uma trajetória dedicada ao conhecimento científico e ao
-          desenvolvimento profissional na área da saúde.
+        <p
+          class="hero-description"
+          id="public-profile-presentation"
+        >
+          Graduanda em Biomedicina pela PUC-Campinas,
+          construindo uma trajetória dedicada ao conhecimento
+          científico e ao desenvolvimento profissional na área
+          da saúde.
         </p>
 
         <div class="hero-buttons">
 
-          <a class="button button-primary" href="#sobre">
+          <a
+            class="button button-primary"
+            href="#sobre"
+          >
             Conheça minha trajetória
           </a>
 
-          <a class="button button-outline" href="#resumos">
+          <a
+            class="button button-outline"
+            href="#resumos"
+          >
             Ver conteúdos <span>↗</span>
           </a>
 
@@ -124,6 +150,7 @@
         <div class="photo-frame">
 
           <img
+            id="public-profile-photo"
             src="assets/foto-isis.jpg"
             alt="Isis Raphaelli Antunes da Costa"
           >
@@ -132,19 +159,34 @@
 
         <div class="floating-card">
 
-          <span class="card-icon">✦</span>
+          <span class="card-icon">
+            ✦
+          </span>
 
           <div>
+
             <small>FORMAÇÃO</small>
-            <strong>Biomedicina</strong>
-            <p>PUC-Campinas</p>
+
+            <strong id="public-profile-course">
+              Biomedicina
+            </strong>
+
+            <p id="public-profile-college">
+              PUC-Campinas
+            </p>
+
           </div>
 
         </div>
 
         <div class="year-badge">
+
           <small>PREVISÃO</small>
-          <strong>2028</strong>
+
+          <strong id="public-profile-end-year">
+            2028
+          </strong>
+
         </div>
 
       </div>
@@ -160,35 +202,64 @@
 
     </section>
 
+    <!-- Informações rápidas -->
     <section class="quick-info">
 
       <div>
+
         <span>01</span>
+
         <p>Instituição</p>
-        <strong>PUC-Campinas</strong>
+
+        <strong id="public-profile-institution">
+          PUC-Campinas
+        </strong>
+
       </div>
 
       <div>
+
         <span>02</span>
+
         <p>Curso</p>
-        <strong>Biomedicina</strong>
+
+        <strong id="public-profile-quick-course">
+          Biomedicina
+        </strong>
+
       </div>
 
       <div>
+
         <span>03</span>
+
         <p>Período</p>
-        <strong>2025 — 2028</strong>
+
+        <strong id="public-profile-period">
+          2025 — 2028
+        </strong>
+
       </div>
 
       <div>
+
         <span>04</span>
+
         <p>Localização</p>
-        <strong>Campinas, SP</strong>
+
+        <strong id="public-profile-location">
+          Campinas, SP
+        </strong>
+
       </div>
 
     </section>
 
-    <section class="section about" id="sobre">
+    <!-- Sobre -->
+    <section
+      class="section about"
+      id="sobre"
+    >
 
       <div class="section-title reveal">
 
@@ -197,31 +268,33 @@
           Sobre mim
         </p>
 
-        <h2>Conhecimento que transforma.</h2>
+        <h2>
+          Conhecimento que transforma.
+        </h2>
 
       </div>
 
       <div class="about-content reveal">
 
-        <p class="large-text">
-          Graduanda em Biomedicina pela Pontifícia Universidade
-          Católica de Campinas.
+        <p
+          class="large-text"
+          id="public-profile-title"
+        >
+          Graduanda em Biomedicina pela Pontifícia
+          Universidade Católica de Campinas.
         </p>
 
-        <p>
-          Atualmente em formação acadêmica, tenho interesse no
-          desenvolvimento científico e nas diversas áreas de atuação
-          biomédica. Busco oportunidades de aprendizado, estágio e
-          crescimento profissional na área da saúde.
-        </p>
-
-        <p class="editable-note">
-          Esta apresentação poderá ser atualizada posteriormente
-          através do painel administrativo.
+        <p id="public-profile-biography">
+          Atualmente em formação acadêmica, tenho interesse
+          no desenvolvimento científico e nas diversas áreas
+          de atuação biomédica. Busco oportunidades de
+          aprendizado, estágio e crescimento profissional na
+          área da saúde.
         </p>
 
         <a
           class="text-link"
+          id="public-profile-linkedin"
           href="https://www.linkedin.com/in/isis-raphaelli-antunes-da-costa-24044b232"
           target="_blank"
           rel="noopener noreferrer"
@@ -233,7 +306,11 @@
 
     </section>
 
-    <section class="section education" id="formacao">
+    <!-- Formação -->
+    <section
+      class="section education"
+      id="formacao"
+    >
 
       <div class="section-heading reveal">
 
@@ -244,14 +321,16 @@
             Formação acadêmica
           </p>
 
-          <h2>Uma trajetória em construção.</h2>
+          <h2>
+            Uma trajetória em construção.
+          </h2>
 
         </div>
 
         <p>
-          Cada etapa da graduação representa uma oportunidade de
-          desenvolver conhecimentos, experiências e novas perspectivas
-          profissionais.
+          Cada etapa da graduação representa uma oportunidade
+          de desenvolver conhecimentos, experiências e novas
+          perspectivas profissionais.
         </p>
 
       </div>
@@ -261,25 +340,34 @@
         <article class="education-main">
 
           <div class="education-top">
+
             <span>Graduação</span>
-            <span>2025 — 2028</span>
+
+            <span id="public-profile-education-period">
+              2025 — 2028
+            </span>
+
           </div>
 
           <div class="education-body">
 
-            <div class="education-icon">✦</div>
+            <div class="education-icon">
+              ✦
+            </div>
 
             <div>
 
-              <p>
+              <p id="public-profile-education-institution">
                 Pontifícia Universidade Católica de Campinas
               </p>
 
-              <h3>Bacharelado em Biomedicina</h3>
+              <h3 id="public-profile-education-course">
+                Bacharelado em Biomedicina
+              </h3>
 
-              <small>
-                Início em fevereiro de 2025 · conclusão prevista
-                para dezembro de 2028
+              <small id="public-profile-education-dates">
+                Início em fevereiro de 2025 · conclusão
+                prevista para dezembro de 2028
               </small>
 
             </div>
@@ -292,9 +380,13 @@
 
           <span>Localização</span>
 
-          <h3>Campinas</h3>
+          <h3 id="public-profile-city">
+            Campinas
+          </h3>
 
-          <p>São Paulo, Brasil</p>
+          <p id="public-profile-state-country">
+            São Paulo, Brasil
+          </p>
 
         </article>
 
@@ -302,6 +394,7 @@
 
     </section>
 
+    <!-- Áreas de interesse -->
     <section class="section interests">
 
       <div class="section-heading reveal">
@@ -313,13 +406,15 @@
             Desenvolvimento
           </p>
 
-          <h2>Áreas para explorar.</h2>
+          <h2>
+            Áreas para explorar.
+          </h2>
 
         </div>
 
         <p>
-          Os interesses específicos poderão ser adicionados pela Isis
-          conforme sua trajetória acadêmica evoluir.
+          Os interesses específicos poderão ser adicionados
+          pela Isis conforme sua trajetória acadêmica evoluir.
         </p>
 
       </div>
@@ -330,13 +425,17 @@
 
           <span>01</span>
 
-          <div class="interest-symbol">⌁</div>
+          <div class="interest-symbol">
+            ⌁
+          </div>
 
-          <h3>Pesquisa científica</h3>
+          <h3>
+            Pesquisa científica
+          </h3>
 
           <p>
-            Espaço para registrar interesses, projetos e experiências
-            relacionados à pesquisa.
+            Espaço para registrar interesses, projetos e
+            experiências relacionados à pesquisa.
           </p>
 
         </article>
@@ -345,13 +444,17 @@
 
           <span>02</span>
 
-          <div class="interest-symbol">◇</div>
+          <div class="interest-symbol">
+            ◇
+          </div>
 
-          <h3>Prática biomédica</h3>
+          <h3>
+            Prática biomédica
+          </h3>
 
           <p>
-            Área destinada às especialidades e aos campos profissionais
-            de maior interesse.
+            Área destinada às especialidades e aos campos
+            profissionais de maior interesse.
           </p>
 
         </article>
@@ -360,13 +463,17 @@
 
           <span>03</span>
 
-          <div class="interest-symbol">✦</div>
+          <div class="interest-symbol">
+            ✦
+          </div>
 
-          <h3>Aprendizado contínuo</h3>
+          <h3>
+            Aprendizado contínuo
+          </h3>
 
           <p>
-            Cursos, eventos e conhecimentos que complementam a
-            formação acadêmica.
+            Cursos, eventos e conhecimentos que complementam
+            a formação acadêmica.
           </p>
 
         </article>
@@ -375,7 +482,11 @@
 
     </section>
 
-    <section class="section summaries" id="resumos">
+    <!-- Resumos -->
+    <section
+      class="section summaries"
+      id="resumos"
+    >
 
       <div class="summaries-intro reveal">
 
@@ -384,16 +495,21 @@
           Biblioteca acadêmica
         </p>
 
-        <h2>Conhecimento compartilhado em resumos.</h2>
+        <h2>
+          Conhecimento compartilhado em resumos.
+        </h2>
 
         <p>
-          Materiais produzidos ao longo da graduação poderão ser
-          organizados por disciplina, tema e semestre.
+          Materiais produzidos ao longo da graduação poderão
+          ser organizados por disciplina, tema e semestre.
         </p>
 
-        <a class="button button-light" href="pages/resumos.html">
-  Explorar resumos <span>→</span>
-</a>
+        <a
+          class="button button-light"
+          href="pages/resumos.html"
+        >
+          Explorar resumos <span>→</span>
+        </a>
 
       </div>
 
@@ -405,15 +521,24 @@
         <article class="paper paper-front">
 
           <div class="paper-header">
+
             <span>I.S.I.S.</span>
-            <small>RESUMO ACADÊMICO</small>
+
+            <small>
+              RESUMO ACADÊMICO
+            </small>
+
           </div>
 
           <div class="paper-content">
 
-            <span class="paper-tag">EM BREVE</span>
+            <span class="paper-tag">
+              EM BREVE
+            </span>
 
-            <h3>O primeiro resumo será publicado aqui.</h3>
+            <h3>
+              O primeiro resumo será publicado aqui.
+            </h3>
 
             <p>
               Esta seção receberá imagem de capa, disciplina,
@@ -423,8 +548,10 @@
           </div>
 
           <div class="paper-footer">
+
             <span>Biomedicina</span>
             <span>01 / 01</span>
+
           </div>
 
         </article>
@@ -433,7 +560,11 @@
 
     </section>
 
-    <section class="section certificates" id="certificados">
+    <!-- Certificados -->
+    <section
+      class="section certificates"
+      id="certificados"
+    >
 
       <div class="section-heading reveal">
 
@@ -444,48 +575,63 @@
             Formação complementar
           </p>
 
-          <h2>Certificados e conquistas.</h2>
+          <h2>
+            Certificados e conquistas.
+          </h2>
 
         </div>
 
         <p>
-          Um acervo dedicado a cursos, eventos, atividades acadêmicas
-          e experiências que complementam a graduação.
+          Um acervo dedicado a cursos, eventos, atividades
+          acadêmicas e experiências que complementam a
+          graduação.
         </p>
 
       </div>
 
       <div class="certificate-empty reveal">
 
-        <div class="certificate-mark">I.</div>
+        <div class="certificate-mark">
+          I.
+        </div>
 
         <div>
 
-          <span>ACERVO EM CONSTRUÇÃO</span>
+          <span>
+            ACERVO EM CONSTRUÇÃO
+          </span>
 
-          <h3>Novas conquistas serão registradas aqui.</h3>
+          <h3>
+            Novas conquistas serão registradas aqui.
+          </h3>
 
           <p>
-            Os certificados poderão ser cadastrados e atualizados
-            diretamente pelo painel administrativo.
+            Os certificados poderão ser cadastrados e
+            atualizados diretamente pelo painel administrativo.
           </p>
 
           <a
-  class="text-link"
-  href="pages/certificados.html"
->
-  Conhecer o acervo <span>→</span>
-</a>
+            class="text-link"
+            href="pages/certificados.html"
+          >
+            Conhecer o acervo <span>→</span>
+          </a>
 
         </div>
 
-        <div class="certificate-seal">✦</div>
+        <div class="certificate-seal">
+          ✦
+        </div>
 
       </div>
 
     </section>
 
-    <section class="contact" id="contato">
+    <!-- Contato -->
+    <section
+      class="contact"
+      id="contato"
+    >
 
       <div class="contact-orbit orbit-one"></div>
       <div class="contact-orbit orbit-two"></div>
@@ -509,6 +655,7 @@
 
         <a
           class="button button-light"
+          id="public-profile-contact-linkedin"
           href="https://www.linkedin.com/in/isis-raphaelli-antunes-da-costa-24044b232"
           target="_blank"
           rel="noopener noreferrer"
@@ -522,15 +669,24 @@
 
   </main>
 
+  <!-- Rodapé -->
   <footer class="footer">
 
     <div class="footer-brand">
+
       <strong>I.S.I.S.</strong>
-      <span>Identidade · Saúde · Investigação · Saber</span>
+
+      <span>
+        Identidade · Saúde · Investigação · Saber
+      </span>
+
     </div>
 
     <p>
-      Portfólio acadêmico de Isis Raphaelli Antunes da Costa
+      Portfólio acadêmico de
+      <span id="public-profile-footer-name">
+        Isis Raphaelli Antunes da Costa
+      </span>
     </p>
 
     <p>
@@ -539,7 +695,17 @@
 
   </footer>
 
+  <!-- Biblioteca oficial do Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <!-- Configuração compartilhada do Supabase -->
+  <script src="js/config/supabase.js"></script>
+
+  <!-- Funcionalidades gerais -->
   <script src="js/main.js"></script>
+
+  <!-- Carregamento do perfil público -->
+  <script src="js/perfil-publico.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="robots"
+    content="noindex, nofollow"
+  >
+
+  <title>Editar perfil | I.S.I.S.</title>
+
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="../assets/favicon.svg"
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/admin.css">
+
+</head>
+
+<body class="admin-body admin-auth-pending">
+
+  <div class="admin-shell">
+
+    <aside class="admin-sidebar">
+
+      <a class="admin-brand" href="./index.html">
+        <strong>I.S.I.S.</strong>
+        <span>Painel administrativo</span>
+      </a>
+
+      <nav
+        class="admin-navigation"
+        aria-label="Navegação administrativa"
+      >
+        <a href="./index.html">
+          <span class="admin-nav-icon">⌂</span>
+          Dashboard
+        </a>
+
+        <a
+          class="active"
+          href="./perfil.html"
+          aria-current="page"
+        >
+          <span class="admin-nav-icon">◉</span>
+          Editar perfil
+        </a>
+
+        <span class="admin-nav-disabled">
+          <span class="admin-nav-icon">□</span>
+          Resumos
+        </span>
+
+        <span class="admin-nav-disabled">
+          <span class="admin-nav-icon">◇</span>
+          Certificados
+        </span>
+
+        <span class="admin-nav-disabled">
+          <span class="admin-nav-icon">⚙</span>
+          Configurações
+        </span>
+      </nav>
+
+      <div class="admin-sidebar-footer">
+
+        <a href="../index.html">
+          Ver portfólio público
+          <span>↗</span>
+        </a>
+
+        <button
+          id="logout-button"
+          type="button"
+        >
+          Sair da conta
+        </button>
+
+      </div>
+
+    </aside>
+
+    <div class="admin-content">
+
+      <header class="admin-topbar">
+
+        <button
+          class="admin-menu-button"
+          id="admin-menu-button"
+          type="button"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+
+          <b class="sr-only">
+            Abrir menu administrativo
+          </b>
+        </button>
+
+        <div class="admin-topbar-title">
+          <span>PORTFÓLIO ACADÊMICO</span>
+          <strong>Edição do perfil</strong>
+        </div>
+
+        <div class="admin-account">
+
+          <span class="admin-avatar" aria-hidden="true">
+            I
+          </span>
+
+          <div>
+            <strong id="admin-name">
+              Administrador
+            </strong>
+
+            <small id="admin-email"></small>
+          </div>
+
+        </div>
+
+      </header>
+
+      <main class="admin-main">
+
+        <section class="profile-heading">
+
+          <div>
+
+            <p class="eyebrow">
+              <span></span>
+              Perfil público
+            </p>
+
+            <h1>Editar apresentação.</h1>
+
+            <p>
+              As alterações salvas aqui serão utilizadas
+              posteriormente na página pública do portfólio.
+            </p>
+
+          </div>
+
+          <a
+            class="button button-outline"
+            href="../index.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Visualizar site <span>↗</span>
+          </a>
+
+        </section>
+
+        <div
+          class="profile-message"
+          id="profile-message"
+          role="status"
+          aria-live="polite"
+          hidden
+        >
+          <span id="profile-message-icon">i</span>
+          <p id="profile-message-text"></p>
+        </div>
+
+        <div
+          class="profile-loading"
+          id="profile-loading"
+        >
+          Carregando informações do perfil...
+        </div>
+
+        <form
+          class="profile-form"
+          id="profile-form"
+          hidden
+        >
+
+          <section class="profile-form-section">
+
+            <div class="profile-section-heading">
+              <span>01</span>
+
+              <div>
+                <h2>Apresentação</h2>
+
+                <p>
+                  Informações principais exibidas no portfólio.
+                </p>
+              </div>
+            </div>
+
+            <div class="profile-fields">
+
+              <div class="admin-field admin-field-full">
+
+                <label for="nome-completo">
+                  Nome completo
+                </label>
+
+                <input
+                  id="nome-completo"
+                  type="text"
+                  maxlength="150"
+                  required
+                >
+
+              </div>
+
+              <div class="admin-field admin-field-full">
+
+                <label for="titulo-profissional">
+                  Título profissional
+                </label>
+
+                <input
+                  id="titulo-profissional"
+                  type="text"
+                  maxlength="150"
+                  placeholder="Ex.: Graduanda em Biomedicina"
+                >
+
+              </div>
+
+              <div class="admin-field admin-field-full">
+
+                <label for="apresentacao">
+                  Apresentação principal
+                </label>
+
+                <textarea
+                  id="apresentacao"
+                  rows="5"
+                  maxlength="1000"
+                ></textarea>
+
+                <small>
+                  Texto curto utilizado na apresentação inicial.
+                </small>
+
+              </div>
+
+              <div class="admin-field admin-field-full">
+
+                <label for="biografia">
+                  Biografia
+                </label>
+
+                <textarea
+                  id="biografia"
+                  rows="7"
+                  maxlength="3000"
+                ></textarea>
+
+                <small>
+                  Texto mais detalhado para a seção sobre.
+                </small>
+
+              </div>
+
+            </div>
+
+          </section>
+
+          <section class="profile-form-section">
+
+            <div class="profile-section-heading">
+              <span>02</span>
+
+              <div>
+                <h2>Formação acadêmica</h2>
+
+                <p>
+                  Curso, instituição e período da graduação.
+                </p>
+              </div>
+            </div>
+
+            <div class="profile-fields">
+
+              <div class="admin-field">
+
+                <label for="curso">
+                  Curso
+                </label>
+
+                <input
+                  id="curso"
+                  type="text"
+                  maxlength="150"
+                >
+
+              </div>
+
+              <div class="admin-field">
+
+                <label for="faculdade">
+                  Faculdade
+                </label>
+
+                <input
+                  id="faculdade"
+                  type="text"
+                  maxlength="200"
+                >
+
+              </div>
+
+              <div class="admin-field">
+
+                <label for="data-inicio">
+                  Início da graduação
+                </label>
+
+                <input
+                  id="data-inicio"
+                  type="month"
+                >
+
+              </div>
+
+              <div class="admin-field">
+
+                <label for="data-conclusao">
+                  Conclusão prevista
+                </label>
+
+                <input
+                  id="data-conclusao"
+                  type="month"
+                >
+
+              </div>
+
+            </div>
+
+          </section>
+
+          <section class="profile-form-section">
+
+            <div class="profile-section-heading">
+              <span>03</span>
+
+              <div>
+                <h2>Localização e contato</h2>
+
+                <p>
+                  Somente informações profissionais e autorizadas.
+                </p>
+              </div>
+            </div>
+
+            <div class="profile-fields">
+
+              <div class="admin-field">
+
+                <label for="cidade">
+                  Cidade
+                </label>
+
+                <input
+                  id="cidade"
+                  type="text"
+                  maxlength="100"
+                >
+
+              </div>
+
+              <div class="admin-field">
+
+                <label for="estado">
+                  Estado
+                </label>
+
+                <input
+                  id="estado"
+                  type="text"
+                  maxlength="100"
+                >
+
+              </div>
+
+              <div class="admin-field">
+
+                <label for="pais">
+                  País
+                </label>
+
+                <input
+                  id="pais"
+                  type="text"
+                  maxlength="100"
+                >
+
+              </div>
+
+              <div class="admin-field">
+
+                <label for="email-profissional">
+                  E-mail profissional
+                </label>
+
+                <input
+                  id="email-profissional"
+                  type="email"
+                  maxlength="200"
+                  placeholder="Opcional"
+                >
+
+              </div>
+
+              <div class="admin-field admin-field-full">
+
+                <label for="linkedin">
+                  LinkedIn
+                </label>
+
+                <input
+                  id="linkedin"
+                  type="url"
+                  maxlength="500"
+                  placeholder="https://www.linkedin.com/in/..."
+                >
+
+              </div>
+
+            </div>
+
+          </section>
+
+          <section class="profile-form-section">
+
+            <div class="profile-section-heading">
+              <span>04</span>
+
+              <div>
+                <h2>Arquivos públicos</h2>
+
+                <p>
+                  Fotografia profissional e currículo.
+                </p>
+              </div>
+            </div>
+
+            <div class="profile-files">
+
+              <div class="profile-file-card">
+
+                <div
+                  class="profile-photo-preview"
+                  id="profile-photo-preview"
+                >
+                  <span id="profile-photo-placeholder">
+                    IR
+                  </span>
+
+                  <img
+                    id="profile-photo-image"
+                    src=""
+                    alt="Prévia da fotografia"
+                    hidden
+                  >
+                </div>
+
+                <div>
+
+                  <label for="profile-photo">
+                    Fotografia
+                  </label>
+
+                  <input
+                    id="profile-photo"
+                    type="file"
+                    accept="image/jpeg,image/png,image/webp"
+                  >
+
+                  <small>
+                    JPG, PNG ou WEBP. Máximo de 5 MB.
+                  </small>
+
+                </div>
+
+              </div>
+
+              <div class="profile-file-card">
+
+                <div class="profile-document-icon">
+                  PDF
+                </div>
+
+                <div>
+
+                  <label for="profile-curriculum">
+                    Currículo
+                  </label>
+
+                  <input
+                    id="profile-curriculum"
+                    type="file"
+                    accept="application/pdf"
+                  >
+
+                  <small>
+                    Arquivo PDF com no máximo 15 MB.
+                  </small>
+
+                  <a
+                    id="current-curriculum"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    hidden
+                  >
+                    Visualizar currículo atual ↗
+                  </a>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </section>
+
+          <footer class="profile-form-footer">
+
+            <p>
+              Revise os dados antes de disponibilizá-los publicamente.
+            </p>
+
+            <button
+              class="button button-primary"
+              id="save-profile"
+              type="submit"
+            >
+              <span id="save-profile-text">
+                Salvar perfil
+              </span>
+
+              <span aria-hidden="true">→</span>
+            </button>
+
+          </footer>
+
+        </form>
+
+      </main>
+
+    </div>
+
+  </div>
+
+  <div
+    class="admin-sidebar-overlay"
+    id="admin-sidebar-overlay"
+  ></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/config/supabase.js"></script>
+  <script src="../js/admin/auth.js"></script>
+  <script src="../js/admin/perfil.js"></script>
+
+</body>
+</html>
