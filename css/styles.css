@@ -1467,3 +1467,26 @@ input {
     padding: 23px;
   }
 }
+
+/* ======================================================
+   LINKS DA APRESENTAÇÃO
+====================================================== */
+
+.about-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px 30px;
+}
+
+.about-links .text-link {
+  margin: 0;
+}
+
+@media (max-width: 520px) {
+  .about-links {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 17px;
+  }
+}

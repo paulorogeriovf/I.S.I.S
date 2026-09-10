@@ -59,6 +59,10 @@ const publicProfileElements = {
     "#public-profile-linkedin"
   ),
 
+  curriculum: document.querySelector(
+  "#public-profile-curriculum"
+),
+
   educationPeriod: document.querySelector(
     "#public-profile-education-period"
   ),
@@ -354,6 +358,22 @@ function renderPublicProfile(profile) {
         profile.linkedin;
     }
   }
+
+  // Exibe o currículo somente quando há um PDF cadastrado.
+if (
+  publicProfileElements.curriculum &&
+  profile.curriculo_url
+) {
+  publicProfileElements.curriculum.href =
+    profile.curriculo_url;
+
+  publicProfileElements.curriculum.hidden = false;
+} else if (publicProfileElements.curriculum) {
+  publicProfileElements.curriculum.hidden = true;
+  publicProfileElements.curriculum.removeAttribute(
+    "href"
+  );
+}
 }
 
 
