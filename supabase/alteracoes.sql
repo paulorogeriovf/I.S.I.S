@@ -69,3 +69,15 @@ check (
     'pdf'
   )
 );
+-- =====================================================
+-- CAPA DOS CERTIFICADOS
+-- =====================================================
+
+-- URL pública da imagem exibida no card.
+alter table public.certificados
+add column if not exists capa_url text;
+
+
+-- Caminho interno para substituição e exclusão da capa.
+alter table public.certificados
+add column if not exists capa_path text;

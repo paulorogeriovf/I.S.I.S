@@ -1693,3 +1693,158 @@
     max-height: 500px;
   }
 }
+
+/* ======================================================
+   CERTIFICADOS ADMINISTRATIVOS
+====================================================== */
+
+.admin-certificate-cover {
+  color: white;
+  background:
+    linear-gradient(
+      145deg,
+      var(--wine),
+      var(--ink)
+    );
+}
+
+.admin-certificate-cover > span {
+  font-size: 2rem;
+  letter-spacing: 0.1em;
+}
+
+.admin-certificate-card .admin-summary-metadata {
+  line-height: 1.5;
+}
+
+/* ======================================================
+   FORMULÁRIO DE CERTIFICADOS
+====================================================== */
+
+.certificate-file-manager {
+  min-width: 0;
+}
+
+.certificate-file-preview {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  align-items: center;
+  gap: 25px;
+  padding: 22px;
+  background: #f7f4ee;
+  border: 1px solid var(--line);
+}
+
+.certificate-preview-area {
+  width: 180px;
+  height: 135px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  color: white;
+  background:
+    linear-gradient(
+      145deg,
+      var(--wine),
+      var(--ink)
+    );
+}
+
+.certificate-preview-area > span {
+  font: 600 2rem "Playfair Display", serif;
+  letter-spacing: 0.08em;
+}
+
+.certificate-preview-area img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: white;
+}
+
+#current-certificate-file {
+  display: inline-block;
+  margin-top: 13px;
+  color: var(--wine);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+@media (max-width: 650px) {
+  .certificate-file-preview {
+    grid-template-columns: 1fr;
+  }
+
+  .certificate-preview-area {
+    width: 100%;
+    max-width: 300px;
+    height: 190px;
+  }
+}
+
+/* ======================================================
+   CAPA DO CERTIFICADO
+====================================================== */
+
+.certificate-cover-manager {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 22px;
+  padding: 22px;
+  background: #f7f4ee;
+  border: 1px solid var(--line);
+}
+
+.certificate-cover-preview {
+  width: 180px;
+  height: 135px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  color: white;
+  background:
+    linear-gradient(
+      145deg,
+      var(--wine),
+      var(--ink)
+    );
+}
+
+.certificate-cover-preview > span {
+  font: 600 2.5rem "Playfair Display", serif;
+}
+
+.certificate-cover-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.certificate-cover-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.certificate-cover-actions .button {
+  min-height: 39px;
+  padding: 8px 13px;
+  cursor: pointer;
+  font-size: 0.72rem;
+}
+
+@media (max-width: 650px) {
+  .certificate-cover-manager {
+    grid-template-columns: 1fr;
+  }
+
+  .certificate-cover-preview {
+    width: 100%;
+    max-width: 320px;
+    height: 190px;
+  }
+}

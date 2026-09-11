@@ -470,3 +470,133 @@
   }
 
 }
+/* ======================================================
+   CARDS PÚBLICOS DOS CERTIFICADOS
+====================================================== */
+
+.certificate-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.certificate-card-preview {
+  aspect-ratio: 16 / 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 25px;
+  color: white;
+  background:
+    linear-gradient(
+      145deg,
+      var(--wine),
+      var(--ink)
+    );
+}
+
+.certificate-card-preview img {
+  width: calc(100% + 50px);
+  height: calc(100% + 50px);
+  margin: -25px;
+  object-fit: cover;
+}
+
+.certificate-card-preview strong {
+  margin: auto 0;
+  font: 600 3rem "Playfair Display", serif;
+}
+
+.certificate-card-preview small {
+  align-self: flex-start;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.certificate-card-content {
+  padding: 27px;
+}
+
+.certificate-card-institution {
+  color: var(--wine);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.certificate-card-content h3 {
+  margin: 13px 0;
+}
+
+.certificate-card-content > p {
+  margin: 0 0 20px;
+}
+
+.certificate-card-information {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 17px;
+  border-top: 1px solid var(--line);
+}
+
+.certificate-card-information > span {
+  padding: 6px 9px;
+  color: var(--ink-soft);
+  background: var(--cream);
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+
+.certificate-validation-code {
+  width: 100%;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.65rem;
+  overflow-wrap: anywhere;
+}
+
+.certificate-card-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin-top: 22px;
+}
+
+.certificate-card-actions .button {
+  min-height: 42px;
+  padding: 10px 15px;
+  font-size: 0.72rem;
+}
+
+.certificate-validation-link {
+  color: var(--wine);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+/* Centraliza a capa e evita cortes no certificado. */
+
+.certificate-card-preview {
+  padding: 12px;
+}
+
+.certificate-card-preview img {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  object-fit: contain;
+  object-position: center;
+  background: white;
+}
+.admin-certificate-cover img {
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+  object-fit: contain;
+  object-position: center;
+  background: white;
+}

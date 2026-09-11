@@ -14,7 +14,7 @@
     content="noindex, nofollow"
   >
 
-  <title>Gerenciar resumos | I.S.I.S.</title>
+  <title>Gerenciar certificados | I.S.I.S.</title>
 
   <link
     rel="icon"
@@ -74,24 +74,19 @@
           Perfil e trajetória
         </a>
 
-        <a
-          class="active"
-          href="./resumos.html"
-          aria-current="page"
-        >
+        <a href="./resumos.html">
           <span class="admin-nav-icon">□</span>
           Resumos
         </a>
 
-        <a href="./certificados.html">
-  <span class="admin-nav-icon">◇</span>
-  Certificados
-</a>
-
-        <span class="admin-nav-disabled">
-          <span class="admin-nav-icon">⚙</span>
-          Configurações
-        </span>
+        <a
+          class="active"
+          href="./certificados.html"
+          aria-current="page"
+        >
+          <span class="admin-nav-icon">◇</span>
+          Certificados
+        </a>
 
       </nav>
 
@@ -135,15 +130,12 @@
 
         <div class="admin-topbar-title">
           <span>PORTFÓLIO ACADÊMICO</span>
-          <strong>Gerenciamento de resumos</strong>
+          <strong>Gerenciamento de certificados</strong>
         </div>
 
         <div class="admin-account">
 
-          <span
-            class="admin-avatar"
-            aria-hidden="true"
-          >
+          <span class="admin-avatar" aria-hidden="true">
             I
           </span>
 
@@ -167,61 +159,61 @@
 
             <p class="eyebrow">
               <span></span>
-              Biblioteca acadêmica
+              Formação complementar
             </p>
 
-            <h1>Gerenciar resumos.</h1>
+            <h1>Gerenciar certificados.</h1>
 
             <p>
-              Cadastre, edite, publique ou arquive os materiais
-              acadêmicos apresentados no portfólio.
+              Cadastre cursos, eventos e atividades que
+              complementam a formação acadêmica.
             </p>
 
           </div>
 
           <a
             class="button button-primary"
-            href="./resumo-formulario.html"
+            href="./certificado-formulario.html"
           >
-            Novo resumo <span>＋</span>
+            Novo certificado <span>＋</span>
           </a>
 
         </section>
 
         <div
           class="profile-message"
-          id="summaries-message"
+          id="certificates-message"
           role="status"
           aria-live="polite"
           hidden
         >
-          <span id="summaries-message-icon">i</span>
-          <p id="summaries-message-text"></p>
+          <span id="certificates-message-icon">i</span>
+          <p id="certificates-message-text"></p>
         </div>
 
         <section class="summary-admin-controls">
 
           <div class="admin-field">
 
-            <label for="admin-summary-search">
+            <label for="admin-certificate-search">
               Pesquisar
             </label>
 
             <input
-              id="admin-summary-search"
+              id="admin-certificate-search"
               type="search"
-              placeholder="Título, disciplina ou categoria"
+              placeholder="Título ou instituição"
             >
 
           </div>
 
           <div class="admin-field">
 
-            <label for="admin-summary-status">
+            <label for="admin-certificate-status">
               Status
             </label>
 
-            <select id="admin-summary-status">
+            <select id="admin-certificate-status">
 
               <option value="">
                 Todos os status
@@ -247,12 +239,12 @@
 
         <section class="summary-admin-counter">
 
-          <p id="admin-summary-counter">
-            Carregando resumos...
+          <p id="admin-certificate-counter">
+            Carregando certificados...
           </p>
 
           <button
-            id="clear-admin-summary-filters"
+            id="clear-admin-certificate-filters"
             type="button"
           >
             Limpar filtros
@@ -262,45 +254,45 @@
 
         <div
           class="profile-loading"
-          id="admin-summaries-loading"
+          id="admin-certificates-loading"
         >
-          Carregando resumos...
+          Carregando certificados...
         </div>
 
         <section
           class="admin-summaries-list"
-          id="admin-summaries-list"
+          id="admin-certificates-list"
           aria-live="polite"
           hidden
         ></section>
 
         <section
           class="dashboard-empty admin-summaries-empty"
-          id="admin-summaries-empty"
+          id="admin-certificates-empty"
           hidden
         >
 
-          <span>□</span>
+          <span>◇</span>
 
-          <h2>Nenhum resumo cadastrado.</h2>
+          <h2>Nenhum certificado cadastrado.</h2>
 
           <p>
-            Crie o primeiro resumo para iniciar a biblioteca
-            acadêmica do portfólio.
+            Cadastre o primeiro certificado para iniciar
+            o acervo de formação complementar.
           </p>
 
           <a
             class="button button-primary"
-            href="./resumo-formulario.html"
+            href="./certificado-formulario.html"
           >
-            Criar primeiro resumo
+            Criar primeiro certificado
           </a>
 
         </section>
 
         <section
           class="dashboard-empty admin-summaries-empty"
-          id="admin-summaries-no-results"
+          id="admin-certificates-no-results"
           hidden
         >
 
@@ -309,7 +301,7 @@
           <h2>Nenhum resultado encontrado.</h2>
 
           <p>
-            Altere a pesquisa ou limpe os filtros selecionados.
+            Altere a pesquisa ou limpe os filtros.
           </p>
 
         </section>
@@ -328,7 +320,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="../js/config/supabase.js"></script>
   <script src="../js/admin/auth.js"></script>
-  <script src="../js/admin/resumos.js"></script>
+  <script src="../js/admin/certificados.js"></script>
 
 </body>
 </html>
