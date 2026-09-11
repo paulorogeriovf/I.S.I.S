@@ -1607,3 +1607,29 @@ input {
     min-height: 50px;
   }
 }
+
+/* Cartão de resumo com altura automática */
+
+.summary-preview {
+  height: auto;
+}
+
+.paper-front {
+  position: relative;
+  inset: auto;
+  min-height: 530px;
+}
+
+.paper-content {
+  margin: 35px 0;
+}
+
+@media (max-width: 720px) {
+  .paper-front {
+    min-height: 450px;
+  }
+
+  .paper-content {
+    margin: 28px 0;
+  }
+}
