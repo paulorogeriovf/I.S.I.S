@@ -537,50 +537,76 @@
 
       </div>
 
-      <div class="summary-preview reveal">
+      <div
+        class="summary-preview reveal"
+        id="home-summary-preview"
+      >
 
-        <div class="paper paper-back"></div>
-        <div class="paper paper-middle"></div>
+  <div class="paper paper-back"></div>
+  <div class="paper paper-middle"></div>
 
-        <article class="paper paper-front">
+  <article class="paper paper-front">
 
-          <div class="paper-header">
+    <div class="paper-header">
 
-            <span>I.S.I.S.</span>
+      <span>I.S.I.S.</span>
 
-            <small>
-              RESUMO ACADÊMICO
-            </small>
+      <small>
+        RESUMO ACADÊMICO
+      </small>
 
-          </div>
+    </div>
 
-          <div class="paper-content">
+    <div class="paper-content">
 
-            <span class="paper-tag">
-              EM BREVE
-            </span>
-
-            <h3>
-              O primeiro resumo será publicado aqui.
-            </h3>
-
-            <p>
-              Esta seção receberá imagem de capa, disciplina,
-              descrição e todas as páginas do material.
-            </p>
-
-          </div>
-
-          <div class="paper-footer">
-
-            <span>Biomedicina</span>
-            <span>01 / 01</span>
-
-          </div>
-
-        </article>
-
+      <div
+        class="home-summary-cover"
+        id="home-summary-cover"
+        hidden
+      >
+        <img
+          id="home-summary-cover-image"
+          src=""
+          alt=""
+        >
       </div>
+
+      <span
+        class="paper-tag"
+        id="home-summary-category"
+      >
+        EM BREVE
+      </span>
+
+      <h3 id="home-summary-title">
+        O primeiro resumo será publicado aqui.
+      </h3>
+
+      <p id="home-summary-description">
+        Esta seção receberá imagem de capa, disciplina,
+        descrição e todas as páginas do material.
+      </p>
+
+    </div>
+
+    <div class="paper-footer">
+
+      <span id="home-summary-discipline">
+        Biomedicina
+      </span>
+
+      <a
+        id="home-summary-link"
+        href="pages/resumos.html"
+      >
+        Ver acervo →
+      </a>
+
+    </div>
+
+  </article>
+
+</div>
 
     </section>
 
@@ -613,29 +639,43 @@
 
       </div>
 
-      <div class="certificate-empty reveal">
+      <div
+        class="certificate-empty reveal"
+        id="home-certificate"
+      >
 
-        <div class="certificate-mark">
-          I.
+        <div
+          class="certificate-mark"
+          id="home-certificate-cover"
+        >
+          <span id="home-certificate-symbol">I.</span>
+
+          <img
+            id="home-certificate-cover-image"
+            src=""
+            alt=""
+            hidden
+          >
         </div>
 
         <div>
 
-          <span>
+          <span id="home-certificate-label">
             ACERVO EM CONSTRUÇÃO
           </span>
 
-          <h3>
+          <h3 id="home-certificate-title">
             Novas conquistas serão registradas aqui.
           </h3>
 
-          <p>
+          <p id="home-certificate-description">
             Os certificados poderão ser cadastrados e
             atualizados diretamente pelo painel administrativo.
           </p>
 
           <a
             class="text-link"
+            id="home-certificate-link"
             href="pages/certificados.html"
           >
             Conhecer o acervo <span>→</span>
@@ -732,6 +772,10 @@
   <script src="js/perfil-publico.js"></script>
 
   <script src="js/trajetoria-publica.js"></script>
+
+  <script src="js/destaque-resumo.js"></script>
+
+  <script src="js/destaque-certificado.js"></script>
 
 </body>
 </html>
