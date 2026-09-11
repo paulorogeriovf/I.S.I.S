@@ -293,3 +293,22 @@ using (
 with check (
   public.eh_administrador()
 );
+
+-- =====================================================
+-- REVOGAÇÃO EXPLÍCITA DE ESCRITA PÚBLICA
+-- =====================================================
+
+revoke insert, update, delete
+on table
+  public.administradores,
+  public.perfil,
+  public.areas_interesse,
+  public.competencias,
+  public.resumos,
+  public.imagens_resumo,
+  public.certificados
+from anon;
+
+revoke insert, update, delete
+on table public.administradores
+from authenticated;
