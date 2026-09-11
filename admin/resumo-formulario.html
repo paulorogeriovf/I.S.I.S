@@ -461,6 +461,86 @@
 
           </section>
 
+          <section class="profile-form-section">
+
+  <div class="profile-section-heading">
+
+    <span>03</span>
+
+    <div>
+      <h2>Páginas do resumo</h2>
+
+      <p>
+        Imagens exibidas na página pública do material.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="summary-pages-manager">
+
+    <div
+      class="summary-pages-locked"
+      id="summary-pages-locked"
+    >
+      Salve o resumo antes de adicionar as páginas.
+    </div>
+
+    <div
+      id="summary-pages-content"
+      hidden
+    >
+
+      <div class="summary-pages-upload">
+
+        <div class="admin-field">
+
+          <label for="summary-pages-files">
+            Selecionar páginas
+          </label>
+
+          <input
+            id="summary-pages-files"
+            type="file"
+            accept="image/jpeg,image/png,image/webp"
+            multiple
+          >
+
+          <small>
+            Selecione as imagens na ordem correta.
+            Cada arquivo pode ter até 5 MB.
+          </small>
+
+        </div>
+
+        <button
+          class="button button-primary"
+          id="upload-summary-pages"
+          type="button"
+        >
+          Enviar páginas
+        </button>
+
+      </div>
+
+      <div
+        class="summary-pages-admin-grid"
+        id="summary-pages-admin-grid"
+      ></div>
+
+      <div
+        class="management-empty"
+        id="summary-pages-admin-empty"
+      >
+        Nenhuma página adicionada.
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
           <section class="summary-publication-note">
 
             <span>i</span>
@@ -516,6 +596,7 @@
   <script src="../js/config/supabase.js"></script>
   <script src="../js/admin/auth.js"></script>
   <script src="../js/admin/resumo-formulario.js"></script>
+  <script src="../js/admin/paginas-resumo.js"></script>
 
 </body>
 </html>

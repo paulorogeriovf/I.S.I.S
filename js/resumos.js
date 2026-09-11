@@ -2,92 +2,56 @@
 // PÁGINA PÚBLICA DE RESUMOS
 // ======================================================
 
-// Campo utilizado para pesquisar resumos.
-const summarySearch = document.querySelector("#summary-search");
+const summarySearch = document.querySelector(
+  "#summary-search"
+);
 
-// Filtro de disciplina.
 const disciplineFilter = document.querySelector(
   "#discipline-filter"
 );
 
-// Filtro de categoria.
 const categoryFilter = document.querySelector(
   "#category-filter"
 );
 
-// Filtro de semestre.
 const semesterFilter = document.querySelector(
   "#semester-filter"
 );
 
-// Ordenação dos resultados.
-const orderFilter = document.querySelector("#order-filter");
+const orderFilter = document.querySelector(
+  "#order-filter"
+);
 
-// Botão responsável por limpar todos os filtros.
 const clearFiltersButton = document.querySelector(
   "#clear-filters"
 );
 
-// Elemento que mostrará a quantidade de resultados.
 const resultsCounter = document.querySelector(
   "#results-counter"
 );
 
-// Grade onde os cards serão inseridos futuramente.
-const summaryGrid = document.querySelector("#summary-grid");
+const summaryGrid = document.querySelector(
+  "#summary-grid"
+);
 
-// Mensagem exibida quando não existem resumos.
 const summaryEmptyState = document.querySelector(
   "#summary-empty"
 );
 
-
-/**
- * Nesta primeira versão, a lista permanece vazia.
- * Futuramente os dados serão carregados do Supabase.
- */
-const summaries = [];
+const publishedSummaryCount = document.querySelector(
+  "#published-summary-count"
+);
 
 
-/**
- * Atualiza a mensagem com a quantidade de resumos.
- */
-function updateResultsCounter(total) {
-  if (!resultsCounter) {
-    return;
-  }
-
-  if (total === 0) {
-    resultsCounter.textContent = "Nenhum resumo publicado";
-    return;
-  }
-
-  if (total === 1) {
-    resultsCounter.textContent = "1 resumo encontrado";
-    return;
-  }
-
-  resultsCounter.textContent = `${total} resumos encontrados`;
-}
+let summaries = [];
 
 
-/**
- * Exibe ou oculta o estado vazio da página.
- */
-function updateEmptyState(total) {
-  if (!summaryEmptyState) {
-    return;
-  }
+// ======================================================
+// FUNÇÕES AUXILIARES
+// ======================================================
 
-  summaryEmptyState.hidden = total > 0;
-}
-
-
-/**
- * Prepara um texto para ser utilizado na pesquisa.
- */
-function normalizeText(text) {
-  return String(text)
+function normalizeText(value) {
+  return String(value || "")
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase()
@@ -95,124 +59,452 @@ function normalizeText(text) {
 }
 
 
-/**
- * Filtra e ordena os resumos.
- */
-function filterSummaries() {
-  const searchValue = normalizeText(
-    summarySearch?.value || ""
+function formatDate(dateValue) {
+  if (!dateValue) {
+    return "Publicação acadêmica";
+  }
+
+  const date = new Date(dateValue);
+
+  return new Intl.DateTimeFormat(
+    "pt-BR",
+    {
+      month: "short",
+      year: "numeric"
+    }
+  ).format(date);
+}
+
+
+function updateResultsCounter(total) {
+  if (total === 0) {
+    resultsCounter.textContent =
+      "Nenhum resumo encontrado";
+
+    return;
+  }
+
+  if (total === 1) {
+    resultsCounter.textContent =
+      "1 resumo encontrado";
+
+    return;
+  }
+
+  resultsCounter.textContent =
+    `${total} resumos encontrados`;
+}
+
+
+// ======================================================
+// OPÇÕES DOS FILTROS
+// ======================================================
+
+function createFilterOption(value) {
+  const option = document.createElement("option");
+
+  option.value = value;
+  option.textContent = value;
+
+  return option;
+}
+
+
+function fillFilter(select, values) {
+  const currentValue = select.value;
+
+  while (select.options.length > 1) {
+    select.remove(1);
+  }
+
+  const uniqueValues = [
+    ...new Set(
+      values
+        .filter(Boolean)
+        .map((value) => String(value).trim())
+    )
+  ].sort((first, second) =>
+    first.localeCompare(
+      second,
+      "pt-BR"
+    )
   );
 
-  const disciplineValue = disciplineFilter?.value || "";
-  const categoryValue = categoryFilter?.value || "";
-  const semesterValue = semesterFilter?.value || "";
-  const orderValue = orderFilter?.value || "recent";
-
-  const filteredSummaries = summaries.filter((summary) => {
-    const matchesSearch =
-      !searchValue ||
-      normalizeText(summary.title).includes(searchValue);
-
-    const matchesDiscipline =
-      !disciplineValue ||
-      summary.discipline === disciplineValue;
-
-    const matchesCategory =
-      !categoryValue ||
-      summary.category === categoryValue;
-
-    const matchesSemester =
-      !semesterValue ||
-      summary.semester === semesterValue;
-
-    return (
-      matchesSearch &&
-      matchesDiscipline &&
-      matchesCategory &&
-      matchesSemester
+  uniqueValues.forEach((value) => {
+    select.append(
+      createFilterOption(value)
     );
   });
 
-  filteredSummaries.sort((firstSummary, secondSummary) => {
-    if (orderValue === "alphabetical") {
-      return firstSummary.title.localeCompare(
-        secondSummary.title,
+  select.value = currentValue;
+}
+
+
+function fillSummaryFilters() {
+  fillFilter(
+    disciplineFilter,
+    summaries.map(
+      (summary) => summary.disciplina
+    )
+  );
+
+  fillFilter(
+    categoryFilter,
+    summaries.map(
+      (summary) => summary.categoria
+    )
+  );
+
+  fillFilter(
+    semesterFilter,
+    summaries.map(
+      (summary) => summary.semestre
+    )
+  );
+}
+
+
+// ======================================================
+// CARD DO RESUMO
+// ======================================================
+
+function createSummaryCard(summary) {
+  const article = document.createElement("article");
+  article.className = "summary-card";
+
+  const cover = document.createElement("div");
+  cover.className = "summary-card-cover";
+
+  if (summary.capa_url) {
+    const image = document.createElement("img");
+
+    image.src = summary.capa_url;
+    image.alt = `Capa do resumo ${summary.titulo}`;
+    image.loading = "lazy";
+
+    cover.append(image);
+  } else {
+    const placeholder = document.createElement("div");
+
+    placeholder.className =
+      "summary-card-cover-placeholder";
+
+    const brand = document.createElement("strong");
+    brand.textContent = "I.";
+
+    const label = document.createElement("small");
+    label.textContent = "RESUMO ACADÊMICO";
+
+    placeholder.append(brand, label);
+    cover.append(placeholder);
+  }
+
+  if (summary.semestre) {
+    const semester = document.createElement("span");
+
+    semester.className =
+      "summary-card-semester";
+
+    semester.textContent = summary.semestre;
+
+    cover.append(semester);
+  }
+
+  const content = document.createElement("div");
+  content.className = "summary-card-content";
+
+  const category = document.createElement("span");
+
+  category.className =
+    "summary-card-category";
+
+  category.textContent =
+    summary.categoria ||
+    "Conteúdo acadêmico";
+
+  const title = document.createElement("h3");
+  title.textContent = summary.titulo;
+
+  const description = document.createElement("p");
+
+  description.textContent =
+    summary.descricao ||
+    "Material acadêmico disponível para consulta.";
+
+  const footer = document.createElement("div");
+  footer.className = "summary-card-footer";
+
+  const discipline = document.createElement("span");
+
+  discipline.textContent =
+    summary.disciplina ||
+    formatDate(summary.publicado_em);
+
+  const link = document.createElement("a");
+
+  link.href =
+    `./resumo.html?id=${summary.id}`;
+
+  link.textContent = "Abrir resumo →";
+
+  footer.append(discipline, link);
+
+  content.append(
+    category,
+    title,
+    description,
+    footer
+  );
+
+  article.append(cover, content);
+
+  return article;
+}
+
+
+// ======================================================
+// FILTROS E ORDENAÇÃO
+// ======================================================
+
+function getFilteredSummaries() {
+  const search = normalizeText(
+    summarySearch.value
+  );
+
+  const discipline =
+    disciplineFilter.value;
+
+  const category =
+    categoryFilter.value;
+
+  const semester =
+    semesterFilter.value;
+
+  const order =
+    orderFilter.value;
+
+  const filtered = summaries.filter(
+    (summary) => {
+      const searchableContent = normalizeText(
+        [
+          summary.titulo,
+          summary.descricao,
+          summary.disciplina,
+          summary.categoria,
+          summary.semestre,
+          ...(summary.palavras_chave || [])
+        ].join(" ")
+      );
+
+      const matchesSearch =
+        !search ||
+        searchableContent.includes(search);
+
+      const matchesDiscipline =
+        !discipline ||
+        summary.disciplina === discipline;
+
+      const matchesCategory =
+        !category ||
+        summary.categoria === category;
+
+      const matchesSemester =
+        !semester ||
+        summary.semestre === semester;
+
+      return (
+        matchesSearch &&
+        matchesDiscipline &&
+        matchesCategory &&
+        matchesSemester
+      );
+    }
+  );
+
+  filtered.sort((first, second) => {
+    if (order === "alphabetical") {
+      return first.titulo.localeCompare(
+        second.titulo,
         "pt-BR"
       );
     }
 
-    const firstDate = new Date(firstSummary.publishedAt);
-    const secondDate = new Date(secondSummary.publishedAt);
+    const firstDate = new Date(
+      first.publicado_em ||
+      first.criado_em
+    ).getTime();
 
-    if (orderValue === "oldest") {
+    const secondDate = new Date(
+      second.publicado_em ||
+      second.criado_em
+    ).getTime();
+
+    if (order === "oldest") {
       return firstDate - secondDate;
     }
 
     return secondDate - firstDate;
   });
 
-  updateResultsCounter(filteredSummaries.length);
-  updateEmptyState(filteredSummaries.length);
+  return filtered;
 }
 
 
-/**
- * Limpa todos os filtros da página.
- */
-function clearFilters() {
-  if (summarySearch) {
-    summarySearch.value = "";
+// ======================================================
+// RENDERIZAÇÃO
+// ======================================================
+
+function renderSummaries() {
+  const filteredSummaries =
+    getFilteredSummaries();
+
+  summaryGrid.replaceChildren();
+
+  updateResultsCounter(
+    filteredSummaries.length
+  );
+
+  if (!filteredSummaries.length) {
+    summaryGrid.hidden = true;
+    summaryEmptyState.hidden = false;
+
+    return;
   }
 
-  if (disciplineFilter) {
-    disciplineFilter.value = "";
-  }
+  filteredSummaries.forEach((summary) => {
+    summaryGrid.append(
+      createSummaryCard(summary)
+    );
+  });
 
-  if (categoryFilter) {
-    categoryFilter.value = "";
-  }
-
-  if (semesterFilter) {
-    semesterFilter.value = "";
-  }
-
-  if (orderFilter) {
-    orderFilter.value = "recent";
-  }
-
-  filterSummaries();
+  summaryEmptyState.hidden = true;
+  summaryGrid.hidden = false;
 }
 
 
-// Atualiza a pesquisa enquanto o visitante digita.
-summarySearch?.addEventListener("input", filterSummaries);
+// ======================================================
+// CONSULTA AO SUPABASE
+// ======================================================
 
-// Atualiza os resultados quando um filtro é alterado.
+async function loadPublishedSummaries() {
+  if (!window.supabaseClient) {
+    console.error(
+      "Cliente do Supabase não foi inicializado."
+    );
+
+    updateResultsCounter(0);
+    summaryEmptyState.hidden = false;
+
+    return;
+  }
+
+  resultsCounter.textContent =
+    "Carregando resumos...";
+
+  try {
+    const {
+      data,
+      error
+    } = await window.supabaseClient
+      .from("resumos")
+      .select(`
+        id,
+        titulo,
+        slug,
+        descricao,
+        disciplina,
+        categoria,
+        semestre,
+        palavras_chave,
+        capa_url,
+        pdf_url,
+        status,
+        publicado_em,
+        criado_em
+      `)
+      .eq("status", "publicado")
+      .order("publicado_em", {
+        ascending: false
+      });
+
+    if (error) {
+      throw error;
+    }
+
+    summaries = data || [];
+
+    publishedSummaryCount.textContent =
+      String(summaries.length).padStart(
+        2,
+        "0"
+      );
+
+    fillSummaryFilters();
+    renderSummaries();
+  } catch (error) {
+    console.error(
+      "Não foi possível carregar os resumos:",
+      error
+    );
+
+    summaries = [];
+
+    publishedSummaryCount.textContent =
+      "00";
+
+    updateResultsCounter(0);
+
+    summaryGrid.hidden = true;
+    summaryEmptyState.hidden = false;
+  }
+}
+
+
+// ======================================================
+// EVENTOS
+// ======================================================
+
+summarySearch?.addEventListener(
+  "input",
+  renderSummaries
+);
+
 disciplineFilter?.addEventListener(
   "change",
-  filterSummaries
+  renderSummaries
 );
 
 categoryFilter?.addEventListener(
   "change",
-  filterSummaries
+  renderSummaries
 );
 
 semesterFilter?.addEventListener(
   "change",
-  filterSummaries
+  renderSummaries
 );
 
 orderFilter?.addEventListener(
   "change",
-  filterSummaries
+  renderSummaries
 );
 
-// Limpa todos os filtros.
 clearFiltersButton?.addEventListener(
   "click",
-  clearFilters
+  () => {
+    summarySearch.value = "";
+    disciplineFilter.value = "";
+    categoryFilter.value = "";
+    semesterFilter.value = "";
+    orderFilter.value = "recent";
+
+    renderSummaries();
+  }
 );
 
-// Prepara a página assim que o JavaScript é carregado.
-filterSummaries();
+
+// ======================================================
+// INICIALIZAÇÃO
+// ======================================================
+
+loadPublishedSummaries();

@@ -1541,3 +1541,155 @@
   font-size: 0.76rem;
   line-height: 1.55;
 }
+
+/* ======================================================
+   PÁGINAS DOS RESUMOS
+====================================================== */
+
+.summary-pages-manager {
+  min-width: 0;
+}
+
+.summary-pages-locked {
+  padding: 25px;
+  color: var(--muted);
+  background: #f7f4ee;
+  border: 1px dashed var(--line);
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.summary-pages-upload {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 20px;
+  padding: 20px;
+  background: #f7f4ee;
+  border: 1px solid var(--line);
+}
+
+.summary-pages-upload input {
+  width: 100%;
+}
+
+.summary-pages-upload .button {
+  border: 0;
+  cursor: pointer;
+}
+
+.summary-pages-upload .button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.summary-pages-admin-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    3,
+    minmax(0, 1fr)
+  );
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.summary-page-admin-card {
+  min-width: 0;
+  overflow: hidden;
+  background: #f7f4ee;
+  border: 1px solid var(--line);
+}
+
+.summary-page-admin-image {
+  height: 240px;
+  overflow: hidden;
+  background: var(--cream);
+}
+
+.summary-page-admin-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.summary-page-admin-information {
+  padding: 16px;
+}
+
+.summary-page-admin-information > strong {
+  display: block;
+  font-size: 0.82rem;
+}
+
+.summary-page-admin-information > p {
+  min-height: 34px;
+  margin: 7px 0 14px;
+  color: var(--muted);
+  font-size: 0.68rem;
+  line-height: 1.5;
+}
+
+.summary-page-admin-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.summary-page-admin-actions button {
+  padding: 6px 9px;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--line);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+
+.summary-page-admin-actions button:hover {
+  color: var(--wine);
+  border-color: var(--wine);
+}
+
+.summary-page-admin-actions button.danger {
+  color: #8f2949;
+}
+
+.summary-page-admin-actions button.danger:hover {
+  color: white;
+  background: #8f2949;
+  border-color: #8f2949;
+}
+
+.summary-page-admin-actions button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+@media (max-width: 1150px) {
+  .summary-pages-admin-grid {
+    grid-template-columns: repeat(
+      2,
+      minmax(0, 1fr)
+    );
+  }
+}
+
+@media (max-width: 680px) {
+  .summary-pages-upload {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-pages-upload .button {
+    width: 100%;
+  }
+
+  .summary-pages-admin-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-page-admin-image {
+    height: auto;
+    max-height: 500px;
+  }
+}

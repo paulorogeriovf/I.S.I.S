@@ -50,7 +50,10 @@
       aria-label="Voltar para o início"
     >
       <strong>I.S.I.S.</strong>
-      <span>Identidade · Saúde · Investigação · Saber</span>
+
+      <span>
+        Identidade · Saúde · Investigação · Saber
+      </span>
     </a>
 
     <button
@@ -63,38 +66,43 @@
       <span></span>
       <span></span>
 
-      <b class="sr-only">Abrir menu</b>
+      <b class="sr-only">
+        Abrir menu
+      </b>
     </button>
 
     <nav
-  id="navigation"
-  class="navigation"
-  aria-label="Navegação principal"
->
-  <a href="../index.html#sobre">
-    Sobre
-  </a>
+      id="navigation"
+      class="navigation"
+      aria-label="Navegação principal"
+    >
+      <a href="../index.html#sobre">
+        Sobre
+      </a>
 
-  <a href="../index.html#formacao">
-    Formação
-  </a>
+      <a href="../index.html#formacao">
+        Formação
+      </a>
 
-  <a href="./resumos.html">
-    Resumos
-  </a>
+      <a href="./resumos.html">
+        Resumos
+      </a>
 
-  <a href="./certificados.html">
-    Certificados
-  </a>
+      <a href="./certificados.html">
+        Certificados
+      </a>
 
-  <a href="../index.html#contato">
-    Contato
-  </a>
+      <a href="../index.html#contato">
+        Contato
+      </a>
 
-  <a class="nav-login" href="./login.html">
-    Área administrativa
-  </a>
-</nav>
+      <a
+        class="nav-login"
+        href="./login.html"
+      >
+        Área administrativa
+      </a>
+    </nav>
 
   </header>
 
@@ -104,9 +112,11 @@
     <section
       class="summary-feedback"
       id="summary-loading"
-      hidden
     >
-      <div class="feedback-symbol loading-symbol">I.</div>
+
+      <div class="feedback-symbol loading-symbol">
+        I.
+      </div>
 
       <p class="eyebrow">
         <span></span>
@@ -114,14 +124,19 @@
       </p>
 
       <h1>Carregando resumo...</h1>
+
     </section>
 
-    <!-- Resumo não encontrado -->
+    <!-- Não encontrado -->
     <section
       class="summary-feedback"
       id="summary-not-found"
+      hidden
     >
-      <div class="feedback-symbol">?</div>
+
+      <div class="feedback-symbol">
+        ?
+      </div>
 
       <p class="eyebrow">
         <span></span>
@@ -135,12 +150,16 @@
         utilizado não corresponde a um resumo disponível.
       </p>
 
-      <a class="button button-primary" href="./resumos.html">
+      <a
+        class="button button-primary"
+        href="./resumos.html"
+      >
         Voltar aos resumos
       </a>
+
     </section>
 
-    <!-- Conteúdo completo do resumo -->
+    <!-- Conteúdo do resumo -->
     <article
       class="summary-content"
       id="summary-content"
@@ -153,7 +172,10 @@
 
         <div class="summary-cover-content">
 
-          <a class="summary-back" href="./resumos.html">
+          <a
+            class="summary-back"
+            href="./resumos.html"
+          >
             <span>←</span>
             Todos os resumos
           </a>
@@ -165,9 +187,20 @@
 
           <div class="summary-metadata">
 
-            <span id="summary-category"></span>
-            <span id="summary-semester"></span>
-            <span id="summary-date"></span>
+            <span
+              id="summary-category"
+              hidden
+            ></span>
+
+            <span
+              id="summary-semester"
+              hidden
+            ></span>
+
+            <span
+              id="summary-date"
+              hidden
+            ></span>
 
           </div>
 
@@ -182,21 +215,28 @@
             class="summary-keywords"
             id="summary-keywords"
             aria-label="Palavras-chave"
+            hidden
           ></div>
 
         </div>
 
         <aside class="summary-information">
 
-          <span class="information-number">I.</span>
+          <span class="information-number">
+            I.
+          </span>
 
           <div>
             <small>DISCIPLINA</small>
-            <strong id="summary-discipline"></strong>
+
+            <strong id="summary-discipline">
+              Não informada
+            </strong>
           </div>
 
           <div>
             <small>PUBLICAÇÃO</small>
+
             <strong id="summary-publication"></strong>
           </div>
 
@@ -215,7 +255,9 @@
               Material completo
             </p>
 
-            <h2>Páginas do resumo.</h2>
+            <h2 id="summary-material-title">
+              Páginas do resumo.
+            </h2>
 
           </div>
 
@@ -242,8 +284,8 @@
           id="pages-empty"
           hidden
         >
-          <p>
-            As páginas deste resumo ainda não estão disponíveis.
+          <p id="pages-empty-text">
+            O material completo ainda não está disponível.
           </p>
         </div>
 
@@ -256,8 +298,13 @@
   <footer class="footer">
 
     <div class="footer-brand">
+
       <strong>I.S.I.S.</strong>
-      <span>Identidade · Saúde · Investigação · Saber</span>
+
+      <span>
+        Identidade · Saúde · Investigação · Saber
+      </span>
+
     </div>
 
     <p>
@@ -270,8 +317,10 @@
 
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/config/supabase.js"></script>
   <script src="../js/main.js"></script>
-<script src="../js/resumo-detalhes.js"></script>
+  <script src="../js/resumo-detalhes.js"></script>
 
 </body>
 </html>

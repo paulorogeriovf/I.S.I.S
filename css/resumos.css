@@ -621,3 +621,34 @@
   }
 
 }
+
+/* Capa utilizada quando o resumo não possui imagem. */
+
+.summary-card-cover-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 28px;
+  color: white;
+  background:
+    linear-gradient(
+      145deg,
+      var(--wine),
+      var(--ink)
+    );
+}
+
+.summary-card-cover-placeholder strong {
+  margin: auto 0;
+  font: 600 4rem "Playfair Display", serif;
+}
+
+.summary-card-cover-placeholder small {
+  align-self: flex-start;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}

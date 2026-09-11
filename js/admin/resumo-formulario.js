@@ -689,6 +689,16 @@ summaryForm?.addEventListener(
         "",
         newAddress
       );
+      window.dispatchEvent(
+  new CustomEvent(
+    "summarySaved",
+    {
+      detail: {
+        id: currentSummary.id
+      }
+    }
+  )
+);
 
       showFormMessage(
         "Resumo salvo com sucesso.",
