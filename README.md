@@ -62,6 +62,11 @@ A área administrativa permite:
 * Verificação de permissão administrativa;
 * Visualização geral dos conteúdos cadastrados;
 * Edição das informações do perfil;
+
+<p align="center">
+  <img src="assets/editar.png"">
+</p> 
+
 * Atualização da foto;
 * Cadastro e remoção do currículo;
 * Gerenciamento das áreas de interesse;
@@ -71,6 +76,11 @@ A área administrativa permite:
 * Upload de capa, PDF e imagens;
 * Cadastro, edição e exclusão de certificados;
 * Upload do arquivo e da capa do certificado;
+
+<p align="center">
+  <img src="assets/editar_cert.png"">
+</p>
+
 * Encerramento seguro da sessão.
 
 ## Tecnologias utilizadas
