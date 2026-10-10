@@ -4,9 +4,9 @@ Portfólio acadêmico desenvolvido sob medida para uma cliente graduanda em Biom
 
 O projeto também possui uma área administrativa protegida, permitindo que a própria cliente gerencie as informações do portfólio sem precisar alterar diretamente os arquivos do site.
 
-## Site publicado
-
-https://isis-portfolio.netlify.app
+<p align="center">
+  <img src="assets/painel.png"">
+</p>
 
 ## Sobre o projeto
 
@@ -30,10 +30,16 @@ A página pública apresenta a identidade acadêmica e profissional da cliente, 
 * Link para LinkedIn;
 * Visualização de currículo em PDF;
 * Biblioteca de resumos acadêmicos;
+<p align="center">
+  <img src="assets/resumos.png"">
+</p>
 * Pesquisa e filtros de resumos;
 * Página individual para cada resumo;
 * Capas, PDFs e imagens complementares dos resumos;
 * Acervo de certificados;
+<p align="center">
+  <img src="assets/curriculos.png"">
+</p>
 * Pesquisa e filtros de certificados;
 * Visualização de capas e arquivos;
 * Destaque automático do resumo mais recente;
@@ -41,6 +47,10 @@ A página pública apresenta a identidade acadêmica e profissional da cliente, 
 * Layout responsivo para computadores, tablets e celulares.
 
 ## Painel administrativo
+
+<p align="center">
+  <img src="assets/dashboard.png"">
+</p>
 
 A área administrativa permite:
 
