@@ -30,16 +30,20 @@ A página pública apresenta a identidade acadêmica e profissional da cliente, 
 * Link para LinkedIn;
 * Visualização de currículo em PDF;
 * Biblioteca de resumos acadêmicos;
+
 <p align="center">
   <img src="assets/resumos.png"">
 </p>
+
 * Pesquisa e filtros de resumos;
 * Página individual para cada resumo;
 * Capas, PDFs e imagens complementares dos resumos;
 * Acervo de certificados;
+
 <p align="center">
   <img src="assets/curriculos.png"">
 </p>
+
 * Pesquisa e filtros de certificados;
 * Visualização de capas e arquivos;
 * Destaque automático do resumo mais recente;
